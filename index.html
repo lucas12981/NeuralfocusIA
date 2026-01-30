@@ -3,252 +3,229 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NeuralFocus AI | Global Expansion Architecture</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <title>NeuralFocus AI | Global Expansion Strategy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --neon-cyan: #00f2ff;
             --neon-purple: #bc13fe;
-            --dark-bg: #030303;
-            --card-bg: rgba(20, 20, 30, 0.8);
+            --bg-dark: #050505;
+            --text-main: #ffffff;
+            --text-dim: #a0a0a0;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; cursor: crosshair; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
-            background-color: var(--dark-bg); 
-            color: #ffffff; 
-            font-family: 'Montserrat', sans-serif; 
+            background: var(--bg-dark); 
+            color: var(--text-main); 
+            font-family: 'Inter', sans-serif; 
             overflow-x: hidden;
-            scroll-behavior: smooth;
+            line-height: 1.5;
         }
 
-        /* Hero Section with AI Particle Interaction */
+        /* Hero Section with 3D Avatar Depth */
         #hero {
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
+            background: radial-gradient(circle at 50% 50%, #111 0%, #000 100%);
             overflow: hidden;
         }
 
-        #particles-js {
+        #particles-js { position: absolute; width: 100%; height: 100%; z-index: 1; }
+
+        .avatar-layer {
             position: absolute;
             width: 100%;
             height: 100%;
-            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .avatar {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 2px solid var(--neon-cyan);
+            box-shadow: 0 0 30px var(--neon-cyan);
+            position: absolute;
+            opacity: 0;
+            transform: translateZ(50px) scale(0.5);
+            animation: emerge 1.5s cubic-bezier(0.17, 0.67, 0.83, 0.67) forwards;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Simulación de Avatares 3D emergiendo */
+        .av-1 { background-image: url('https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80'); left: 15%; animation-delay: 0.2s; }
+        .av-2 { background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80'); right: 15%; animation-delay: 0.5s; }
+        .av-3 { background-image: url('https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80'); top: 10%; width: 150px; height: 150px; animation-delay: 0.8s; }
+
+        @keyframes emerge {
+            0% { opacity: 0; transform: scale(0.3) translateY(100px); }
+            100% { opacity: 0.7; transform: scale(1) translateY(0); }
         }
 
         .hero-content {
             position: relative;
-            z-index: 2;
+            z-index: 10;
             text-align: center;
-            padding: 0 5%;
-            width: 100%;
+            max-width: 800px;
+            padding: 20px;
         }
 
         h1 {
             font-family: 'Orbitron', sans-serif;
-            font-size: clamp(2.8rem, 10vw, 6rem); /* Letras más grandes y potentes */
-            font-weight: 900;
-            line-height: 1.1;
-            text-transform: uppercase;
-            background: linear-gradient(90deg, var(--neon-cyan), #fff, var(--neon-purple));
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            letter-spacing: -1px; /* Más compacto */
+            margin-bottom: 15px;
+            background: linear-gradient(to bottom, #fff, #888);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: glow 3s ease-in-out infinite alternate;
-            margin-bottom: 20px;
-        }
-
-        @keyframes glow {
-            from { filter: drop-shadow(0 0 10px var(--neon-cyan)); }
-            to { filter: drop-shadow(0 0 30px var(--neon-purple)); }
         }
 
         .hero-sub {
-            font-size: clamp(1.2rem, 4vw, 2rem);
-            font-weight: 300;
-            color: #aaa;
-            max-width: 800px;
-            margin: 0 auto 50px;
-        }
-
-        /* Buttons with Neon Effect */
-        .btn-box { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
-        .btn {
-            padding: 20px 45px;
-            font-family: 'Orbitron';
-            font-weight: 700;
-            text-decoration: none;
-            text-transform: uppercase;
-            border-radius: 10px;
             font-size: 1.1rem;
-            transition: 0.4s;
-            display: flex;
-            align-items: center;
-            gap: 12px;
+            color: var(--text-dim);
+            margin-bottom: 40px;
+            font-weight: 300;
         }
 
-        .btn-cyan { 
-            background: var(--neon-cyan); 
-            color: #000; 
-            box-shadow: 0 0 20px rgba(0, 242, 255, 0.5); 
-        }
-        .btn-purple { 
-            border: 2px solid var(--neon-purple); 
-            color: #fff; 
-            box-shadow: inset 0 0 15px rgba(188, 19, 254, 0.3); 
-        }
-        .btn:hover { transform: scale(1.08) rotate(-1deg); filter: brightness(1.2); }
-
-        /* Sections & Grid */
-        section { padding: 120px 8%; position: relative; z-index: 3; }
-        h2 { 
-            font-family: 'Orbitron'; 
-            font-size: 3rem; 
-            margin-bottom: 60px; 
+        /* Compact Cards UI */
+        .section-title {
             text-align: center;
-            border-bottom: 2px solid var(--neon-cyan);
-            display: inline-block;
-            padding-bottom: 10px;
+            font-family: 'Orbitron';
+            font-size: 1.8rem;
+            margin: 80px 0 40px;
+            color: var(--neon-cyan);
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 0 5% 100px;
+            max-width: 1200px;
+            margin: auto;
         }
 
         .card {
-            background: var(--card-bg);
-            padding: 50px 30px;
-            border-radius: 25px;
-            border: 1px solid rgba(255,255,255,0.05);
-            backdrop-filter: blur(15px);
-            transition: 0.5s;
-            text-align: center;
-            position: relative;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            padding: 30px;
+            border-radius: 15px;
+            transition: 0.3s;
         }
 
         .card:hover {
-            border-color: var(--neon-cyan);
-            transform: translateY(-15px) rotate(1deg);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 20px rgba(0, 242, 255, 0.2);
+            background: rgba(255,255,255,0.06);
+            border-color: var(--neon-purple);
+            transform: translateY(-5px);
         }
 
-        .card i { font-size: 4rem; color: var(--neon-cyan); margin-bottom: 25px; }
-        .card h3 { font-family: 'Orbitron'; font-size: 1.8rem; margin-bottom: 20px; color: #fff; }
-        .card p { font-size: 1.1rem; color: #bbb; line-height: 1.7; }
+        .card i { font-size: 2rem; color: var(--neon-cyan); margin-bottom: 20px; }
+        .card h3 { font-family: 'Orbitron'; font-size: 1.2rem; margin-bottom: 10px; }
+        .card p { font-size: 0.95rem; color: var(--text-dim); }
 
-        /* Testimonials */
-        .test-grid { display: flex; flex-direction: column; gap: 30px; max-width: 900px; margin: auto; }
-        .testimonial {
-            background: rgba(188, 19, 254, 0.05);
-            padding: 40px;
-            border-left: 5px solid var(--neon-purple);
-            border-radius: 0 20px 20px 0;
+        /* Buttons UI */
+        .btn-group { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+        .btn {
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            font-family: 'Orbitron';
+            transition: 0.3s;
         }
-        .testimonial blockquote { font-size: 1.3rem; font-style: italic; margin-bottom: 15px; }
-        .testimonial cite { font-weight: 800; color: var(--neon-cyan); }
+        .btn-main { background: var(--neon-cyan); color: #000; }
+        .btn-sec { border: 1px solid var(--neon-purple); color: #fff; }
+        .btn:hover { filter: brightness(1.2); transform: translateY(-2px); }
 
-        /* Footer */
-        footer { text-align: center; padding: 60px; background: #000; border-top: 1px solid #222; }
-        
-        /* Mobile Scale */
+        /* Responsive Mobile */
         @media (max-width: 768px) {
-            h1 { font-size: 3rem; }
-            section { padding: 80px 5%; }
-            .btn { width: 100%; justify-content: center; }
+            .avatar { width: 120px; height: 120px; }
+            .av-1 { left: 5%; } .av-2 { right: 5%; }
+            h1 { font-size: 2.2rem; }
         }
     </style>
 </head>
 <body>
 
     <section id="hero">
-        <div id="particles-js"></div> <div class="hero-content">
-            <h1>NeuralFocus AI</h1>
-            <p class="hero-sub">Global Expansion Architecture | Pioneering Industry 5.0 Intelligence</p>
-            <div class="btn-box">
-                <a href="https://wa.me/2246496971" class="btn btn-cyan"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-                <a href="https://lucas12981.github.io/NeuralFocus-Turkey-Beta/" class="btn btn-purple"><i class="fas fa-microchip"></i> Launch App</a>
+        <div id="particles-js"></div>
+        <div class="avatar-layer">
+            <div class="avatar av-1"></div>
+            <div class="avatar av-2"></div>
+            <div class="avatar av-3"></div>
+        </div>
+        
+        <div class="hero-content">
+            <h1>NEURALFOCUS AI</h1>
+            <p class="hero-sub">Global Expansion Architecture & Industry 5.0 Intelligence</p>
+            <div class="btn-group">
+                <a href="https://wa.me/2246496971" class="btn btn-main"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                <a href="https://lucas12981.github.io/NeuralFocus-Turkey-Beta/" class="btn btn-sec">Launch App</a>
             </div>
         </div>
     </section>
 
-    <div style="text-align: center;">
-        <h2>The Architecture</h2>
+    <h2 class="section-title">Strategic Core</h2>
+    <div class="grid">
+        <div class="card">
+            <i class="fas fa-microchip"></i>
+            <h3>Intelligent Voice</h3>
+            <p>24/7 Written AI support for logistics, healthcare, and industrial protocols.</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-user-tie"></i>
+            <h3>Life Agent</h3>
+            <p>Real-time interaction 24/7 acting as your dedicated global strategy partner.</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-chart-pie"></i>
+            <h3>Sector Integration</h3>
+            <p>Scalable solutions for Healthcare, Gastronomy, Industry, and Construction.</p>
+        </div>
     </div>
 
-    <section class="grid">
-        <div class="card">
-            <i class="fas fa-brain"></i>
-            <h3>Intelligent Voice</h3>
-            <p>24/7 Written AI support solving complex logistics, industrial protocols, and technical operations.</p>
+    <h2 class="section-title">Global Authority</h2>
+    <div class="grid" style="grid-template-columns: 1fr;">
+        <div class="card" style="border-left: 4px solid var(--neon-purple);">
+            <p style="font-style: italic; margin-bottom: 10px;">"The AI integration reduced our industrial downtime by 40%."</p>
+            <strong>- Industrial Partner, Turkey [cite: 02-01-2026]</strong>
         </div>
-        <div class="card">
-            <i class="fas fa-satellite-dish"></i>
-            <h3>Life Agent</h3>
-            <p>Live real-time interaction 24/7. Your dedicated strategist in the cloud for global decision-making.</p>
+        <div class="card" style="border-left: 4px solid var(--neon-purple);">
+            <p style="font-style: italic; margin-bottom: 10px;">"Implementation was seamless and hospital management improved instantly."</p>
+            <strong>- Medical Director, USA </strong>
         </div>
-        <div class="card">
-            <i class="fas fa-chart-line"></i>
-            <h3>Global Expansion</h3>
-            <p>Tailored AI ecosystems for <strong>Healthcare, Gastronomy, Industry, and Construction</strong>.</p>
-        </div>
-    </section>
+    </div>
 
-    <section style="background: #080808;">
-        <div style="text-align: center; margin-bottom: 60px;">
-            <h2 style="border-color: var(--neon-purple);">Global Authority</h2>
-        </div>
-        <div class="test-grid">
-            <div class="testimonial">
-                <blockquote>"The AI architecture provided by NeuralFocus reduced our industrial downtime by 40%. It's like having a digital brain for the entire factory."</blockquote>
-                <cite>- Industrial CEO, Turkey</cite>
-            </div>
-            <div class="testimonial">
-                <blockquote>"Diagnostic flows and hospital management improved significantly within months of implementation. Truly global scale."</blockquote>
-                <cite>- Medical Director, USA</cite>
-            </div>
-            <div class="testimonial">
-                <blockquote>"A 24/7 intelligent agent is a game-changer for international franchise management. Complete control from my phone."</blockquote>
-                <cite>- Gastronomy Owner, Spain</cite>
-            </div>
-        </div>
-    </section>
-
-    <section style="text-align: center;">
-        <h2>Connect With The Strategist</h2>
-        <p style="font-size: 1.5rem; margin-bottom: 40px;">Lucas Guzmán - Global Strategy Director </p>
-        <div class="btn-box">
-            <a href="mailto:menteglobalempresarial@gmail.com" class="btn btn-purple"><i class="fas fa-envelope"></i> Professional Email</a>
-            <a href="https://wa.me/2246496971" class="btn btn-cyan">Smartphone Link</a>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 NeuralFocus AI - All rights reserved. Pioneering Intelligence from Argentina to the World.</p>
+    <footer style="padding: 50px; text-align: center; background: #000; border-top: 1px solid #111;">
+        <p style="color: var(--text-dim); font-size: 0.8rem;">
+            Lucas Guzmán - Global Strategy Director <br>
+            menteglobalempresarial@gmail.com
+        </p>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
     <script>
         particlesJS("particles-js", {
             "particles": {
-                "number": { "value": 160, "density": { "enable": true, "value_area": 800 } },
-                "color": { "value": "#00f2ff" },
-                "shape": { "type": "circle" },
-                "opacity": { "value": 0.5, "random": true },
-                "size": { "value": 3, "random": true },
-                "line_linked": { "enable": true, "distance": 150, "color": "#bc13fe", "opacity": 0.4, "width": 1 },
-                "move": { "enable": true, "speed": 4, "direction": "none", "random": true, "straight": false, "out_mode": "out" }
-            },
-            "interactivity": {
-                "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "bubble" } },
-                "modes": { "grab": { "distance": 250 }, "bubble": { "size": 10, "distance": 200 } }
+                "number": { "value": 100 },
+                "color": { "value": "#bc13fe" },
+                "line_linked": { "enable": true, "distance": 150, "color": "#00f2ff", "opacity": 0.2 },
+                "move": { "enable": true, "speed": 2 }
             }
         });
     </script>
 </body>
     </html>
-        
+    
