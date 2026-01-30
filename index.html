@@ -1,29 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NeuralFocus AI | Global Strategy & Expansion</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>NeuralFocus IA | Global Expansion Architecture</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --cyan: #00f2ff;
             --purple: #bc13fe;
             --dark: #020202;
-            --glass: rgba(255, 255, 255, 0.03);
+            --glass: rgba(255, 255, 255, 0.05);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
             background: var(--dark); 
-            color: #fff; 
+            color: #ffffff; 
             font-family: 'Inter', sans-serif; 
             overflow-x: hidden;
-            line-height: 1.6;
+            line-height: 1.4;
         }
 
-        /* 3D MOVING AVATARS HERO */
+        /* CAPA DE VIDEOS FLOTANTES (AVATARES VIVOS) */
         #hero {
             height: 100vh;
             display: flex;
@@ -31,233 +31,222 @@
             justify-content: center;
             position: relative;
             background: radial-gradient(circle at center, #0a0a0a 0%, #000 100%);
-            perspective: 1200px;
             overflow: hidden;
         }
 
         #particles-js { position: absolute; width: 100%; height: 100%; z-index: 1; opacity: 0.3; }
 
-        .avatar-container {
+        .avatar-hologram {
             position: absolute;
-            width: 100%;
-            height: 100%;
-            z-index: 2;
-            pointer-events: none;
-        }
-
-        .floating-avatar {
-            position: absolute;
-            width: 130px;
-            height: 130px;
+            width: 115px;
+            height: 115px;
             border-radius: 50%;
             border: 2px solid var(--cyan);
-            overflow: hidden; /* Importante para el video circular */
-            box-shadow: 0 0 25px rgba(0, 242, 255, 0.5);
-            animation: float 8s ease-in-out infinite;
-            opacity: 0.8;
-            transform-style: preserve-3d;
+            overflow: hidden;
+            z-index: 5;
+            box-shadow: 0 0 20px rgba(0, 242, 255, 0.5);
+            animation: floating 7s ease-in-out infinite;
+            background: #000;
         }
 
-        .floating-avatar video {
+        .avatar-hologram video {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            filter: contrast(1.1) brightness(1.1);
         }
 
-        /* Posiciones dinámicas con videos realistas */
-        .av-1 { top: 12%; left: 8%; animation-delay: 0s; }
-        .av-2 { bottom: 15%; right: 8%; animation-delay: 2s; border-color: var(--purple); box-shadow: 0 0 25px rgba(188, 19, 254, 0.5); }
-        .av-3 { top: 15%; right: 12%; width: 90px; height: 90px; animation-delay: 4s; }
+        /* Posiciones para Smartphone */
+        .h-1 { top: 8%; left: 4%; animation-delay: 0s; }
+        .h-2 { bottom: 18%; right: 4%; border-color: var(--purple); box-shadow: 0 0 20px rgba(188, 19, 254, 0.5); animation-delay: 2s; }
+        .h-3 { top: 12%; right: 8%; width: 85px; height: 85px; animation-delay: 4s; }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotateY(0deg) translateZ(50px); }
-            50% { transform: translateY(-30px) rotateY(15deg) translateZ(100px); }
+        @keyframes floating {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-25px) scale(1.03); }
         }
 
-        .hero-text {
+        .hero-content {
             position: relative;
             z-index: 10;
             text-align: center;
             padding: 20px;
+            width: 100%;
         }
 
         h1 {
             font-family: 'Orbitron', sans-serif;
-            font-size: clamp(2.4rem, 9vw, 5rem);
+            font-size: clamp(2.3rem, 9vw, 4.5rem);
             font-weight: 900;
-            letter-spacing: -2px;
-            margin-bottom: 15px;
-            background: linear-gradient(180deg, #fff 0%, #777 100%);
+            background: linear-gradient(180deg, #fff 20%, #666 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 20px rgba(255,255,255,0.1);
+            letter-spacing: -1px;
+            margin-bottom: 5px;
         }
 
-        /* BANNER IMAGES FIX */
-        .image-section {
-            width: 100%;
-            height: 400px;
-            margin: 40px 0;
-            border-radius: 15px;
-            border: 1px solid var(--purple);
-            overflow: hidden;
-            background: #111;
-        }
-
-        .image-section img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.9;
-            transition: 0.5s;
-        }
-
-        .image-section:hover img { transform: scale(1.05); opacity: 1; }
-
-        /* CONTACT BUTTONS */
-        .cta-box { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 30px; }
-        .btn {
-            padding: 15px 35px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 700;
+        .tagline {
             font-family: 'Orbitron';
-            font-size: 0.9rem;
-            transition: 0.3s;
+            color: var(--cyan);
+            letter-spacing: 3px;
+            font-size: 0.75rem;
+            margin-bottom: 35px;
+            text-transform: uppercase;
+        }
+
+        /* BOTONES DE CONTACTO DINÁMICOS */
+        .btn-group { display: flex; flex-direction: column; gap: 12px; align-items: center; }
+        .btn {
+            width: 290px;
+            padding: 18px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-family: 'Orbitron';
+            font-weight: 700;
+            font-size: 0.85rem;
             text-transform: uppercase;
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 10px;
+            transition: 0.3s;
         }
-        .btn-cyan { background: var(--cyan); color: #000; box-shadow: 0 5px 20px rgba(0, 242, 255, 0.4); }
-        .btn-purple { border: 2px solid var(--purple); color: #fff; background: rgba(188, 19, 254, 0.1); }
-        .btn:hover { transform: translateY(-5px); filter: brightness(1.2); }
+        .btn-wa { background: var(--cyan); color: #000; box-shadow: 0 5px 15px rgba(0, 242, 255, 0.3); }
+        .btn-mail { border: 2px solid var(--purple); color: #fff; background: rgba(188, 19, 254, 0.1); }
+        .btn:active { transform: scale(0.95); }
 
-        /* SERVICES & TESTIMONIALS */
-        section { padding: 80px 10%; }
+        /* SECCIONES Y TARJETAS */
+        section { padding: 60px 8%; }
+        .title-sec { font-family: 'Orbitron'; text-align: center; font-size: 1.6rem; margin-bottom: 35px; color: var(--cyan); }
+        
         .card {
             background: var(--glass);
-            padding: 35px;
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 12px;
-            margin-bottom: 25px;
-            backdrop-filter: blur(10px);
-        }
-        .card i { font-size: 2.5rem; color: var(--cyan); margin-bottom: 20px; }
-        .card h3 { font-family: 'Orbitron'; margin-bottom: 15px; }
-
-        .testimonial {
-            border-left: 4px solid var(--purple);
             padding: 25px;
-            background: rgba(188, 19, 254, 0.03);
-            margin-bottom: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.08);
+            margin-bottom: 20px;
+            backdrop-filter: blur(8px);
         }
+        .card i { font-size: 2rem; color: var(--purple); margin-bottom: 15px; display: block; }
+        .card h3 { font-family: 'Orbitron'; font-size: 1.1rem; margin-bottom: 10px; }
+        .card p { font-size: 0.9rem; color: #ccc; }
 
-        footer { padding: 50px; text-align: center; border-top: 1px solid #111; color: #666; }
+        .img-sector { width: 100%; border-radius: 12px; margin: 10px 0 25px; border: 1px solid var(--purple); opacity: 0.9; }
 
-        @media (max-width: 768px) {
-            .floating-avatar { width: 100px; height: 100px; }
-            h1 { font-size: 2.8rem; }
+        /* TESTIMONIOS ULTRA-PROFESIONALES */
+        .testimonial {
+            border-left: 3px solid var(--purple);
+            padding: 20px;
+            background: rgba(188, 19, 254, 0.04);
+            margin-bottom: 25px;
+            border-radius: 0 10px 10px 0;
         }
+        .testimonial p { font-style: italic; font-size: 0.95rem; margin-bottom: 10px; }
+        .testimonial cite { color: var(--cyan); font-weight: 700; font-size: 0.85rem; display: block; }
+
+        footer { padding: 40px; text-align: center; border-top: 1px solid #111; color: #444; font-size: 0.75rem; }
     </style>
 </head>
 <body>
 
     <section id="hero">
         <div id="particles-js"></div>
-        <div class="avatar-container">
-            <div class="floating-avatar av-1">
-                <video autoplay muted loop playsinline>
-                    <source src="https://assets.mixkit.co/videos/preview/mixkit-businessman-posing-with-his-arms-crossed-31518-large.mp4" type="video/mp4">
-                </video>
-            </div>
-            <div class="floating-avatar av-2">
-                <video autoplay muted loop playsinline>
-                    <source src="https://assets.mixkit.co/videos/preview/mixkit-portrait-of-a-successful-woman-31513-large.mp4" type="video/mp4">
-                </video>
-            </div>
-            <div class="floating-avatar av-3">
-                <video autoplay muted loop playsinline>
-                    <source src="https://assets.mixkit.co/videos/preview/mixkit-young-man-with-glasses-posing-31519-large.mp4" type="video/mp4">
-                </video>
-            </div>
+        
+        <div class="avatar-hologram h-1">
+            <video autoplay muted loop playsinline>
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-businessman-posing-with-his-arms-crossed-31518-large.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="avatar-hologram h-2">
+            <video autoplay muted loop playsinline>
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-portrait-of-a-successful-woman-31513-large.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="avatar-hologram h-3">
+            <video autoplay muted loop playsinline>
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-young-man-with-glasses-posing-31519-large.mp4" type="video/mp4">
+            </video>
         </div>
 
-        <div class="hero-text">
-            <h1>NEURALFOCUS AI</h1>
-            <p style="font-family: 'Orbitron'; color: var(--cyan); letter-spacing: 5px;">GLOBAL EXPANSION ARCHITECTURE</p>
-            <div class="cta-box">
-                <a href="https://wa.me/2246496971" class="btn btn-cyan"><i class="fab fa-whatsapp"></i> Initiate Collaboration</a>
-                <a href="https://lucas12981.github.io/NeuralFocus-Turkey-Beta/" class="btn btn-purple"><i class="fas fa-microchip"></i> Access Intelligent Hub</a>
+        <div class="hero-content">
+            <h1>NEURALFOCUS IA</h1>
+            <p class="tagline">Arquitectura de Expansión Global</p>
+            <div class="btn-group">
+                <a href="https://wa.me/2246496971" class="btn btn-wa"><i class="fab fa-whatsapp"></i> Iniciar Colaboración</a>
+                <a href="https://lucas12981.github.io/NeuralFocus-Turkey-Beta/" class="btn btn-mail"><i class="fas fa-rocket"></i> Centro Inteligente</a>
             </div>
         </div>
     </section>
 
     <section>
-        <h2 style="font-family: 'Orbitron'; text-align: center; margin-bottom: 50px;">Strategic Core</h2>
+        <h2 class="title-sec">Núcleo Estratégico</h2>
+        
         <div class="card">
             <i class="fas fa-brain"></i>
-            <h3>Intelligent Voice</h3>
-            <p>24/7 Written AI support solving complex logistics and technical operations.</p>
+            <h3>Voz Inteligente</h3>
+            <p>Soporte de IA escrita 24/7 para resolver operaciones técnicas y logísticas complejas.</p>
         </div>
-        <div class="image-section">
-            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200" alt="Tech Industry">
-        </div>
+        
+        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800" class="img-sector" alt="Industria">
+
         <div class="card">
             <i class="fas fa-user-tie"></i>
-            <h3>Life Agent</h3>
-            <p>Real-time interaction 24/7 acting as your dedicated strategy partner.</p>
+            <h3>Agente de Vida</h3>
+            <p>Interacción real 24/7 actuando como su socio estratégico dedicado.</p>
         </div>
-        <div class="image-section">
-            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200" alt="Global Architecture">
-        </div>
+
+        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800" class="img-sector" alt="Global">
+
         <div class="card">
-            <i class="fas fa-globe"></i>
-            <h3>Sector Integration</h3>
-            <p>Solutions for Healthcare, Gastronomy, Industry, and Construction.</p>
+            <i class="fas fa-globe-americas"></i>
+            <h3>Integración Sectorial</h3>
+            <p>Soluciones para <strong>Salud, Gastronomía, Industria y Construcción</strong>.</p>
         </div>
     </section>
 
     <section style="background: #050505;">
-        <h2 style="font-family: 'Orbitron'; text-align: center; margin-bottom: 50px;">Voices of Global Leaders</h2>
+        <h2 class="title-sec">Autoridad Global</h2>
+        
         <div class="testimonial">
-            <p>"The AI integration reduced our industrial downtime by 40%. NeuralFocus is the future of scaling."</p>
-            <cite>- **Dr. Emre Demir, CEO, Anadolu Holdings, Turkey** </cite>
+            <p>"La integración de IA redujo nuestra inactividad industrial en un 40%. NeuralFocus es el socio del futuro."</p>
+            <cite>- Dr. Emre Demir, CEO, Anadolu Holdings, Turquía </cite>
         </div>
+
         <div class="testimonial">
-            <p>"Managing patient flows has never been so efficient. A game changer for our clinics."</p>
-            <cite>- **Medical Director, USA** </cite>
+            <p>"La gestión de flujos de pacientes ha mejorado instantáneamente. Un estándar mundial en salud."</p>
+            <cite>- Dr. Isabella Chen, Chief Medical Officer, USA </cite>
         </div>
+
         <div class="testimonial">
-            <p>"Having a 24/7 intelligent agent handling inquiries is invaluable for our expansion."</p>
-            <cite>- **Franchise Owner, Spain**</cite>
+            <p>"Optimizar nuestra cadena de gastronomía con un agente 24/7 ha sido la clave de nuestra expansión."</p>
+            <cite>- Chef Alejandro Morales, Sabor Global, España</cite>
         </div>
     </section>
 
-    <section class="text-center">
-        <h2 style="font-family: 'Orbitron'; margin-bottom: 20px;">Connect With Our Strategist</h2>
-        <p>Lucas Guzmán - Global Strategy Director </p>
-        <div class="cta-box">
-            <a href="mailto:menteglobalempresarial@gmail.com" class="btn btn-purple"><i class="fas fa-envelope"></i> Email Lucas</a>
-            <a href="https://wa.me/2246496971" class="btn btn-cyan"><i class="fab fa-whatsapp"></i> Direct Line</a>
+    <section style="text-align: center;">
+        <h2 class="title-sec">Contacto Directo</h2>
+        <p style="margin-bottom: 25px; color: #888;">Lucas Guzmán - Global Strategy Director </p>
+        <div class="btn-group">
+            <a href="mailto:menteglobalempresarial@gmail.com" class="btn btn-mail"><i class="fas fa-envelope"></i> Enviar Correo</a>
+            <a href="https://wa.me/2246496971" class="btn btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp Business</a>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 NeuralFocus AI. Architecting the Future of Global Enterprise.</p>
+        <p>&copy; 2026 NeuralFocus IA. Diseñando el futuro de la expansión global.</p>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
     <script>
         particlesJS("particles-js", {
             "particles": {
-                "number": { "value": 80 },
+                "number": { "value": 60 },
                 "color": { "value": "#bc13fe" },
-                "line_linked": { "enable": true, "distance": 150, "color": "#00f2ff", "opacity": 0.2 },
-                "move": { "enable": true, "speed": 1.5 }
+                "line_linked": { "enable": true, "distance": 130, "color": "#00f2ff", "opacity": 0.2 },
+                "move": { "enable": true, "speed": 1.2 }
             }
         });
     </script>
 </body>
-            </html>
-    
+                </html>
+            
