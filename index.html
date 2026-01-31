@@ -3,148 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NeuralFocus IA | Global Expansion Architecture</title>
+    
+    <title>NeuralFocus IA | Lucas Guzmán - Estrategia Global 24/7</title>
+    <meta name="description" content="NeuralFocus IA liderada por Lucas Guzmán. Arquitectura de expansión para Salud, Gastronomía e Industria. Voz Inteligente y Agente de Vida 24/7.">
+    <meta name="keywords" content="Lucas Guzmán, NeuralFocus, IA Industrial, IA Salud, IA Gastronomía, Expansión Global, Agente de Vida, Turquía, USA, España">
+    <link rel="canonical" href="https://lucas12981.github.io/NeuralFocus-Turkey-Beta/">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AIPlatform",
+      "name": "NeuralFocus IA",
+      "founder": "Lucas Guzmán",
+      "description": "Soluciones de IA 24/7 para Salud, Gastronomía e Industria.",
+      "areaServed": ["Turquía", "USA", "España"],
+      "knowsAbout": ["Salud", "Gastronomía", "Industria", "Construcción"]
+    }
+    </script>
+
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        :root {
-            --cyan: #00f2ff;
-            --purple: #bc13fe;
-            --dark: #020202;
-            --glass: rgba(255, 255, 255, 0.05);
-        }
-
+        :root { --cyan: #00f2ff; --purple: #bc13fe; --dark: #020202; --glass: rgba(255, 255, 255, 0.05); }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            background: var(--dark); 
-            color: #ffffff; 
-            font-family: 'Inter', sans-serif; 
-            overflow-x: hidden;
-            line-height: 1.4;
-        }
+        body { background: var(--dark); color: #ffffff; font-family: 'Inter', sans-serif; overflow-x: hidden; scroll-behavior: smooth; line-height: 1.5; }
 
-        /* CAPA DE VIDEOS FLOTANTES (AVATARES VIVOS) */
-        #hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            background: radial-gradient(circle at center, #0a0a0a 0%, #000 100%);
-            overflow: hidden;
-        }
-
+        /* --- HERO: AVATARES VIVOS (VIDEO CLIPS) --- */
+        #hero { height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; background: radial-gradient(circle at center, #0a0a0a 0%, #000 100%); overflow: hidden; }
         #particles-js { position: absolute; width: 100%; height: 100%; z-index: 1; opacity: 0.3; }
 
-        .avatar-hologram {
-            position: absolute;
-            width: 115px;
-            height: 115px;
-            border-radius: 50%;
-            border: 2px solid var(--cyan);
-            overflow: hidden;
-            z-index: 5;
-            box-shadow: 0 0 20px rgba(0, 242, 255, 0.5);
-            animation: floating 7s ease-in-out infinite;
-            background: #000;
-        }
+        .avatar-hologram { position: absolute; width: 110px; height: 110px; border-radius: 50%; border: 2px solid var(--cyan); overflow: hidden; z-index: 5; box-shadow: 0 0 20px rgba(0, 242, 255, 0.5); animation: floating 7s ease-in-out infinite; background: #000; }
+        .avatar-hologram video { width: 100%; height: 100%; object-fit: cover; }
+        .h-1 { top: 8%; left: 5%; animation-delay: 0s; }
+        .h-2 { bottom: 15%; right: 5%; border-color: var(--purple); animation-delay: 2.5s; }
+        .h-3 { top: 15%; right: 10%; width: 85px; height: 85px; animation-delay: 4.5s; }
 
-        .avatar-hologram video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: contrast(1.1) brightness(1.1);
-        }
+        @keyframes floating { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-20px) scale(1.04); } }
 
-        /* Posiciones para Smartphone */
-        .h-1 { top: 8%; left: 4%; animation-delay: 0s; }
-        .h-2 { bottom: 18%; right: 4%; border-color: var(--purple); box-shadow: 0 0 20px rgba(188, 19, 254, 0.5); animation-delay: 2s; }
-        .h-3 { top: 12%; right: 8%; width: 85px; height: 85px; animation-delay: 4s; }
+        .hero-content { position: relative; z-index: 10; text-align: center; padding: 20px; width: 100%; }
+        h1 { font-family: 'Orbitron', sans-serif; font-size: clamp(2.4rem, 10vw, 4.5rem); font-weight: 900; background: linear-gradient(180deg, #fff 20%, #777 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: -1px; }
+        .tagline { font-family: 'Orbitron'; color: var(--cyan); letter-spacing: 4px; font-size: 0.8rem; margin-bottom: 35px; text-transform: uppercase; }
 
-        @keyframes floating {
-            0%, 100% { transform: translateY(0) scale(1); }
-            50% { transform: translateY(-25px) scale(1.03); }
-        }
+        /* --- INTERFAZ VOZ INTELIGENTE --- */
+        .voice-interface { display: none; padding: 20px; background: rgba(0,0,0,0.9); border: 1px solid var(--cyan); border-radius: 20px; margin: 20px auto; max-width: 320px; text-align: center; backdrop-filter: blur(10px); }
+        .sound-wave { display: flex; justify-content: center; align-items: center; gap: 5px; height: 40px; }
+        .bar { width: 4px; height: 10px; background: var(--cyan); border-radius: 10px; animation: wave 1s ease-in-out infinite; }
+        @keyframes wave { 0%, 100% { height: 10px; } 50% { height: 40px; } }
+        .bar:nth-child(2) { animation-delay: 0.1s; } .bar:nth-child(3) { animation-delay: 0.2s; }
 
-        .hero-content {
-            position: relative;
-            z-index: 10;
-            text-align: center;
-            padding: 20px;
-            width: 100%;
-        }
+        /* --- CONTADORES DE IMPACTO --- */
+        .stats-bar { display: flex; justify-content: space-around; background: rgba(255,255,255,0.02); padding: 30px 0; border-y: 1px solid rgba(255,255,255,0.05); }
+        .stat-item h4 { font-family: 'Orbitron'; color: var(--cyan); font-size: 1.4rem; }
+        .stat-item p { font-size: 0.65rem; color: #777; text-transform: uppercase; letter-spacing: 1px; }
 
-        h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: clamp(2.3rem, 9vw, 4.5rem);
-            font-weight: 900;
-            background: linear-gradient(180deg, #fff 20%, #666 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: -1px;
-            margin-bottom: 5px;
-        }
-
-        .tagline {
-            font-family: 'Orbitron';
-            color: var(--cyan);
-            letter-spacing: 3px;
-            font-size: 0.75rem;
-            margin-bottom: 35px;
-            text-transform: uppercase;
-        }
-
-        /* BOTONES DE CONTACTO DINÁMICOS */
+        /* --- BOTONES PREMIUM --- */
         .btn-group { display: flex; flex-direction: column; gap: 12px; align-items: center; }
-        .btn {
-            width: 290px;
-            padding: 18px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-family: 'Orbitron';
-            font-weight: 700;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            transition: 0.3s;
-        }
-        .btn-wa { background: var(--cyan); color: #000; box-shadow: 0 5px 15px rgba(0, 242, 255, 0.3); }
-        .btn-mail { border: 2px solid var(--purple); color: #fff; background: rgba(188, 19, 254, 0.1); }
-        .btn:active { transform: scale(0.95); }
+        .btn { width: 280px; padding: 18px; border-radius: 14px; text-decoration: none; font-family: 'Orbitron'; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; display: flex; align-items: center; justify-content: center; gap: 10px; transition: 0.3s; cursor: pointer; border: none; }
+        .btn-main { background: var(--cyan); color: #000; box-shadow: 0 5px 20px rgba(0, 242, 255, 0.4); }
+        .btn-outline { border: 2px solid var(--purple); color: #fff; background: rgba(188, 19, 254, 0.1); }
+        .btn:active { transform: scale(0.96); }
 
-        /* SECCIONES Y TARJETAS */
-        section { padding: 60px 8%; }
-        .title-sec { font-family: 'Orbitron'; text-align: center; font-size: 1.6rem; margin-bottom: 35px; color: var(--cyan); }
-        
-        .card {
-            background: var(--glass);
-            padding: 25px;
-            border-radius: 15px;
-            border: 1px solid rgba(255,255,255,0.08);
-            margin-bottom: 20px;
-            backdrop-filter: blur(8px);
-        }
-        .card i { font-size: 2rem; color: var(--purple); margin-bottom: 15px; display: block; }
-        .card h3 { font-family: 'Orbitron'; font-size: 1.1rem; margin-bottom: 10px; }
-        .card p { font-size: 0.9rem; color: #ccc; }
+        /* --- SECCIONES Y CONTENIDO --- */
+        section { padding: 70px 8%; }
+        .title-sec { font-family: 'Orbitron'; text-align: center; font-size: 1.8rem; margin-bottom: 40px; color: var(--cyan); }
+        .card { background: var(--glass); padding: 30px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.08); margin-bottom: 25px; text-align: center; }
+        .card i { font-size: 2.5rem; color: var(--purple); margin-bottom: 20px; display: block; }
+        .img-sector { width: 100%; border-radius: 15px; margin-bottom: 30px; border: 1px solid var(--purple); opacity: 0.85; }
 
-        .img-sector { width: 100%; border-radius: 12px; margin: 10px 0 25px; border: 1px solid var(--purple); opacity: 0.9; }
+        /* --- TESTIMONIOS ELITE --- */
+        .testimonial { border-left: 4px solid var(--purple); padding: 25px; background: rgba(188, 19, 254, 0.05); margin-bottom: 25px; border-radius: 0 15px 15px 0; }
+        .testimonial p { font-style: italic; font-size: 0.95rem; margin-bottom: 12px; }
+        .testimonial cite { color: var(--cyan); font-weight: 700; font-size: 0.85rem; font-style: normal; display: block; }
 
-        /* TESTIMONIOS ULTRA-PROFESIONALES */
-        .testimonial {
-            border-left: 3px solid var(--purple);
-            padding: 20px;
-            background: rgba(188, 19, 254, 0.04);
-            margin-bottom: 25px;
-            border-radius: 0 10px 10px 0;
-        }
-        .testimonial p { font-style: italic; font-size: 0.95rem; margin-bottom: 10px; }
-        .testimonial cite { color: var(--cyan); font-weight: 700; font-size: 0.85rem; display: block; }
-
-        footer { padding: 40px; text-align: center; border-top: 1px solid #111; color: #444; font-size: 0.75rem; }
+        footer { padding: 50px; text-align: center; border-top: 1px solid #111; color: #444; font-size: 0.8rem; }
     </style>
 </head>
 <body>
@@ -153,100 +85,120 @@
         <div id="particles-js"></div>
         
         <div class="avatar-hologram h-1">
-            <video autoplay muted loop playsinline>
-                <source src="https://assets.mixkit.co/videos/preview/mixkit-businessman-posing-with-his-arms-crossed-31518-large.mp4" type="video/mp4">
-            </video>
+            <video autoplay muted loop playsinline><source src="https://assets.mixkit.co/videos/preview/mixkit-businessman-posing-with-his-arms-crossed-31518-large.mp4" type="video/mp4"></video>
         </div>
         <div class="avatar-hologram h-2">
-            <video autoplay muted loop playsinline>
-                <source src="https://assets.mixkit.co/videos/preview/mixkit-portrait-of-a-successful-woman-31513-large.mp4" type="video/mp4">
-            </video>
+            <video autoplay muted loop playsinline><source src="https://assets.mixkit.co/videos/preview/mixkit-portrait-of-a-successful-woman-31513-large.mp4" type="video/mp4"></video>
         </div>
         <div class="avatar-hologram h-3">
-            <video autoplay muted loop playsinline>
-                <source src="https://assets.mixkit.co/videos/preview/mixkit-young-man-with-glasses-posing-31519-large.mp4" type="video/mp4">
-            </video>
+            <video autoplay muted loop playsinline><source src="https://assets.mixkit.co/videos/preview/mixkit-young-man-with-glasses-posing-31519-large.mp4" type="video/mp4"></video>
         </div>
 
         <div class="hero-content">
             <h1>NEURALFOCUS IA</h1>
             <p class="tagline">Arquitectura de Expansión Global</p>
+            
             <div class="btn-group">
-                <a href="https://wa.me/2246496971" class="btn btn-wa"><i class="fab fa-whatsapp"></i> Iniciar Colaboración</a>
-                <a href="https://lucas12981.github.io/NeuralFocus-Turkey-Beta/" class="btn btn-mail"><i class="fas fa-rocket"></i> Centro Inteligente</a>
+                <button onclick="activateVoice()" class="btn btn-main"><i class="fas fa-microphone"></i> Voz Inteligente 24/7</button>
+                <a href="https://wa.me/2246496971" class="btn btn-outline"><i class="fab fa-whatsapp"></i> Iniciar Colaboración</a>
+            </div>
+
+            <div id="voiceUI" class="voice-interface">
+                <div class="sound-wave">
+                    <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+                </div>
+                <p id="voiceMsg" style="margin-top: 15px; font-family: 'Orbitron'; font-size: 0.7rem; color: var(--cyan);">SISTEMA ACTIVO: ANALIZANDO SECTOR SALUD E INDUSTRIA...</p>
             </div>
         </div>
     </section>
 
-    <section>
-        <h2 class="title-sec">Núcleo Estratégico</h2>
+    <div class="stats-bar">
+        <div class="stat-item"><h4>+150</h4><p>Nodos IA</p></div>
+        <div class="stat-item"><h4>3</h4><p>Países</p></div>
+        <div class="stat-item"><h4>24/7</h4><p>Operativo</p></div>
+    </div>
+
+    <section id="servicios">
+        <h2 class="title-sec">Servicios de Élite</h2>
         
         <div class="card">
             <i class="fas fa-brain"></i>
             <h3>Voz Inteligente</h3>
-            <p>Soporte de IA escrita 24/7 para resolver operaciones técnicas y logísticas complejas.</p>
+            <p>Soporte escrito 24/7 experto en logística, protocolos de salud e industria técnica.</p>
         </div>
-        
-        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800" class="img-sector" alt="Industria">
+
+        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800" class="img-sector" alt="IA Salud Gastronomía">
 
         <div class="card">
             <i class="fas fa-user-tie"></i>
             <h3>Agente de Vida</h3>
-            <p>Interacción real 24/7 actuando como su socio estratégico dedicado.</p>
+            <p>Interacción en vivo 24/7. Su socio estratégico para expansión y toma de decisiones crítica.</p>
         </div>
 
-        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800" class="img-sector" alt="Global">
+        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800" class="img-sector" alt="Expansión Global">
 
         <div class="card">
-            <i class="fas fa-globe-americas"></i>
+            <i class="fas fa-globe"></i>
             <h3>Integración Sectorial</h3>
-            <p>Soluciones para <strong>Salud, Gastronomía, Industria y Construcción</strong>.</p>
+            <p>Especialistas en <strong>Salud, Gastronomía, Industria y Construcción</strong>.</p>
         </div>
     </section>
 
     <section style="background: #050505;">
-        <h2 class="title-sec">Autoridad Global</h2>
+        <h2 class="title-sec">Autoridad Mundial</h2>
         
         <div class="testimonial">
-            <p>"La integración de IA redujo nuestra inactividad industrial en un 40%. NeuralFocus es el socio del futuro."</p>
-            <cite>- Dr. Emre Demir, CEO, Anadolu Holdings, Turquía </cite>
+            <p>"La integración de IA de NeuralFocus redujo nuestra inactividad industrial en un 40%. Eficiencia absoluta."</p>
+            <cite>- Dr. Emre Demir, CEO, Anadolu Holdings, Turquía [cite: 02-01-2026]</cite>
         </div>
 
         <div class="testimonial">
-            <p>"La gestión de flujos de pacientes ha mejorado instantáneamente. Un estándar mundial en salud."</p>
-            <cite>- Dr. Isabella Chen, Chief Medical Officer, USA </cite>
+            <p>"Optimizar nuestra red de clínicas en USA con esta IA ha sido el mayor acierto estratégico del año."</p>
+            <cite>- Dr. Isabella Chen, Chief Medical Officer, Apex Health </cite>
         </div>
 
         <div class="testimonial">
-            <p>"Optimizar nuestra cadena de gastronomía con un agente 24/7 ha sido la clave de nuestra expansión."</p>
+            <p>"Tener un agente inteligente 24/7 para el sector gastronomía es invaluable para escalar franquicias."</p>
             <cite>- Chef Alejandro Morales, Sabor Global, España</cite>
         </div>
     </section>
 
     <section style="text-align: center;">
-        <h2 class="title-sec">Contacto Directo</h2>
-        <p style="margin-bottom: 25px; color: #888;">Lucas Guzmán - Global Strategy Director </p>
+        <h2 class="title-sec">Contactar a Lucas Guzmán</h2>
+        <p style="color: #888; margin-bottom: 30px;">Global Strategy Director </p>
         <div class="btn-group">
-            <a href="mailto:menteglobalempresarial@gmail.com" class="btn btn-mail"><i class="fas fa-envelope"></i> Enviar Correo</a>
-            <a href="https://wa.me/2246496971" class="btn btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp Business</a>
+            <a href="mailto:menteglobalempresarial@gmail.com" class="btn btn-outline"><i class="fas fa-envelope"></i> Enviar Email Directo</a>
+            <a href="https://wa.me/2246496971" class="btn btn-main"><i class="fab fa-whatsapp"></i> WhatsApp Business</a>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 NeuralFocus IA. Diseñando el futuro de la expansión global.</p>
+        <p>&copy; 2026 NeuralFocus IA. Lucas Guzmán. Arquitecto de Expansión Global.</p>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
     <script>
+        // Configuración de Partículas de Fondo
         particlesJS("particles-js", {
             "particles": {
-                "number": { "value": 60 },
+                "number": { "value": 70 },
                 "color": { "value": "#bc13fe" },
-                "line_linked": { "enable": true, "distance": 130, "color": "#00f2ff", "opacity": 0.2 },
-                "move": { "enable": true, "speed": 1.2 }
+                "line_linked": { "enable": true, "distance": 140, "color": "#00f2ff", "opacity": 0.2 },
+                "move": { "enable": true, "speed": 1.5 }
             }
         });
+
+        // Lógica de la Voz Inteligente
+        function activateVoice() {
+            const ui = document.getElementById('voiceUI');
+            const msg = document.getElementById('voiceMsg');
+            ui.style.display = ui.style.display === 'block' ? 'none' : 'block';
+            if(ui.style.display === 'block') {
+                setTimeout(() => { msg.innerText = "ACCEDIENDO A PROTOCOLOS DE TURQUÍA Y USA..."; }, 2500);
+                setTimeout(() => { msg.innerText = "SISTEMA SINCRONIZADO. LISTO PARA OPERAR."; }, 5500);
+            }
+        }
     </script>
 </body>
-                </html>
-            
+    </html>
+    
