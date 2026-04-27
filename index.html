@@ -4,87 +4,111 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <title>NeuralFocus AI | Consultoría para Negocios y Empresas</title>
-    <meta name="description" content="Lucas Guzmán - Ayudo a negocios, emprendedores y empresas a crecer con IA, Marketing y Seguridad Digital.">
+    <title>NeuralFocus AI | Consultoría Estratégica de Alto Nivel</title>
+    <meta name="description" content="Expertos en transformación digital. Implementamos IA, Estrategias de Marketing de Precisión y Arquitectura de Ciberseguridad para empresas globales.">
     
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        :root { --cyan: #00f2ff; --purple: #bc13fe; --dark: #020202; --glass: rgba(255, 255, 255, 0.05); --skype: #00aff0; }
+        :root { 
+            --cyan: #00f2ff; 
+            --purple: #bc13fe; 
+            --dark: #020202; 
+            --glass: rgba(255, 255, 255, 0.03); 
+            --skype: #00aff0;
+            --gradient: linear-gradient(135deg, var(--cyan), var(--purple));
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background: var(--dark); color: #ffffff; font-family: 'Inter', sans-serif; overflow-x: hidden; scroll-behavior: smooth; line-height: 1.6; }
 
-        /* --- BOTÓN TRADUCCIÓN --- */
+        /* --- UI MODERNA: BOTÓN FLOTANTE --- */
         .lang-switch {
-            position: fixed; bottom: 25px; right: 25px; z-index: 1000;
-            background: rgba(0, 242, 255, 0.15); border: 1px solid var(--cyan);
-            padding: 12px 20px; border-radius: 50px; cursor: pointer;
-            backdrop-filter: blur(10px); display: flex; align-items: center; gap: 10px;
-            font-family: 'Orbitron'; font-size: 0.7rem; color: #fff; box-shadow: 0 0 20px rgba(0, 242, 255, 0.2);
-            transition: 0.3s;
+            position: fixed; bottom: 30px; right: 30px; z-index: 1000;
+            background: rgba(0, 0, 0, 0.8); border: 1px solid var(--cyan);
+            padding: 15px 25px; border-radius: 50px; cursor: pointer;
+            backdrop-filter: blur(15px); display: flex; align-items: center; gap: 12px;
+            font-family: 'Orbitron'; font-size: 0.75rem; color: #fff;
+            box-shadow: 0 0 30px rgba(0, 242, 255, 0.3); transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-        .lang-switch:hover { transform: scale(1.05); background: rgba(0, 242, 255, 0.25); }
+        .lang-switch:hover { transform: scale(1.1) translateY(-5px); box-shadow: 0 0 50px rgba(0, 242, 255, 0.5); }
 
-        /* --- HERO --- */
+        /* --- HERO: IMPACTO VISUAL --- */
         #hero { 
             min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; 
-            position: relative; background: radial-gradient(circle at center, #0a0a0a 0%, #000 100%); overflow: hidden; padding: 40px 20px;
+            position: relative; background: radial-gradient(circle at 50% 50%, #111 0%, #000 100%); overflow: hidden; padding: 60px 20px;
         }
-        #particles-js { position: absolute; width: 100%; height: 100%; z-index: 1; opacity: 0.3; }
+        #particles-js { position: absolute; width: 100%; height: 100%; z-index: 1; opacity: 0.4; }
 
-        .hero-content { position: relative; z-index: 10; text-align: center; width: 100%; max-width: 850px; }
-        h1 { font-family: 'Orbitron', sans-serif; font-size: clamp(2.2rem, 8vw, 3.8rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; text-transform: uppercase; background: linear-gradient(180deg, #fff 40%, #888 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: 2px; }
+        .hero-content { position: relative; z-index: 10; text-align: center; width: 100%; max-width: 1000px; }
+        h1 { font-family: 'Orbitron', sans-serif; font-size: clamp(2.5rem, 10vw, 4.5rem); font-weight: 900; line-height: 1; margin-bottom: 25px; text-transform: uppercase; background: linear-gradient(180deg, #fff 30%, #555 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 20px rgba(255,255,255,0.1)); }
         
-        .hero-desc { margin-bottom: 35px; color: #ccc; font-size: clamp(1rem, 4vw, 1.2rem); max-width: 700px; margin-inline: auto; }
+        .hero-desc { margin-bottom: 40px; color: #aaa; font-size: clamp(1.1rem, 3vw, 1.35rem); font-weight: 300; max-width: 800px; margin-inline: auto; line-height: 1.8; }
+        .hero-desc strong { color: var(--cyan); font-weight: 600; }
 
-        /* --- BOTONES --- */
-        .btn-section { width: 100%; max-width: 380px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; }
-        .btn { width: 100%; padding: 18px; border-radius: 15px; text-decoration: none; font-family: 'Orbitron'; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; display: flex; align-items: center; justify-content: center; gap: 12px; transition: 0.3s; border: none; cursor: pointer; }
-        .btn-primary { background: var(--cyan); color: #000; box-shadow: 0 0 20px rgba(0, 242, 255, 0.3); }
-        .btn-skype { background: transparent; color: #fff; border: 1px solid var(--skype); }
-        .btn-outline { background: transparent; color: #fff; border: 1px solid var(--purple); }
-        .btn:hover { transform: translateY(-3px); opacity: 0.9; }
+        /* --- BOTONES PREMIUM --- */
+        .btn-section { width: 100%; max-width: 420px; margin: 0 auto; display: flex; flex-direction: column; gap: 18px; }
+        .btn { width: 100%; padding: 20px; border-radius: 18px; text-decoration: none; font-family: 'Orbitron'; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; display: flex; align-items: center; justify-content: center; gap: 15px; transition: 0.4s; border: none; cursor: pointer; position: relative; overflow: hidden; }
         
-        .media-bar { background: rgba(255,255,255,0.02); padding: 30px 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; opacity: 0.4; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .media-bar span { font-family: 'Orbitron'; font-weight: 900; font-size: 1rem; }
-
-        /* --- SECCIONES --- */
-        section { padding: 100px 20px; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .container { max-width: 1200px; margin: 0 auto; }
-        .sec-title { font-family: 'Orbitron'; color: var(--cyan); text-align: center; margin-bottom: 50px; font-size: 2rem; text-transform: uppercase; letter-spacing: 2px; }
+        .btn-skype { background: rgba(0, 175, 240, 0.1); color: #fff; border: 1px solid var(--skype); }
+        .btn-skype:hover { background: var(--skype); box-shadow: 0 0 30px rgba(0, 175, 240, 0.4); color: #000; }
         
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .card { background: var(--glass); border-radius: 28px; padding: 40px; border: 1px solid rgba(255,255,255,0.05); transition: 0.3s; }
-        .card:hover { border-color: var(--purple); background: rgba(255, 255, 255, 0.08); }
-        .card i { font-size: 2.5rem; color: var(--purple); margin-bottom: 25px; display: block; }
-        .card h3 { font-family: 'Orbitron'; margin-bottom: 15px; font-size: 1.3rem; color: var(--cyan); }
-        .card p { color: #bbb; font-size: 0.95rem; }
+        .btn-outline { background: transparent; color: #fff; border: 1px solid var(--purple); box-shadow: inset 0 0 10px rgba(188, 19, 254, 0.2); }
+        .btn-outline:hover { background: var(--purple); box-shadow: 0 0 30px rgba(188, 19, 254, 0.5); }
 
-        /* --- BANNER FINAL --- */
-        .turkey-banner { background: linear-gradient(135deg, #c8102e 0%, #000 100%); border-radius: 35px; padding: 60px 40px; border: 1px solid rgba(255,255,255,0.1); text-align: center; position: relative; overflow: hidden; }
-        .turkey-banner h2 { font-family: 'Orbitron'; font-size: 2rem; margin-bottom: 20px; }
+        /* --- MEDIA AUTHORITY --- */
+        .media-bar { background: rgba(255,255,255,0.01); padding: 40px 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 50px; border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .media-bar span { font-family: 'Orbitron'; font-weight: 900; font-size: 1.1rem; color: #444; transition: 0.3s; }
+        .media-bar span:hover { color: var(--cyan); opacity: 1; }
 
-        footer { padding: 60px 20px; text-align: center; font-size: 0.9rem; color: #666; background: #010101; }
-        strong { color: #fff; }
+        /* --- SECCIONES TÉCNICAS --- */
+        section { padding: 120px 20px; }
+        .container { max-width: 1300px; margin: 0 auto; }
+        .sec-title { font-family: 'Orbitron'; color: var(--cyan); text-align: center; margin-bottom: 60px; font-size: clamp(1.8rem, 5vw, 2.5rem); letter-spacing: 4px; text-transform: uppercase; }
+        
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
+        .card { background: var(--glass); border-radius: 35px; border: 1px solid rgba(255,255,255,0.07); transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1); overflow: hidden; position: relative; }
+        .card:hover { transform: translateY(-15px); border-color: var(--cyan); background: rgba(255,255,255,0.08); box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+        
+        .card-img { width: 100%; height: 240px; object-fit: cover; filter: grayscale(100%) contrast(1.2); opacity: 0.6; transition: 0.5s; }
+        .card:hover .card-img { filter: grayscale(0%); opacity: 1; transform: scale(1.05); }
+
+        .card-content { padding: 40px; }
+        .card i { font-size: 2.5rem; color: var(--purple); margin-bottom: 25px; }
+        .card h3 { font-family: 'Orbitron'; margin-bottom: 20px; font-size: 1.5rem; letter-spacing: 1px; color: #fff; }
+        .card p { color: #aaa; font-size: 1rem; line-height: 1.8; font-weight: 300; }
+
+        /* --- SECCIÓN CONTACTO ELITE --- */
+        .turkey-banner { background: linear-gradient(165deg, #700 0%, #000 100%); border-radius: 50px; padding: 80px 50px; border: 1px solid rgba(255,255,255,0.1); text-align: center; position: relative; box-shadow: 0 30px 60px rgba(0,0,0,0.8); }
+        .turkey-banner h2 { font-family: 'Orbitron'; font-size: clamp(1.5rem, 5vw, 2.5rem); margin-bottom: 25px; color: #fff; }
+        .btn-primary { background: var(--cyan); color: #000; padding: 22px 45px; border-radius: 50px; font-size: 1rem; margin-inline: auto; max-width: 400px; box-shadow: 0 10px 40px rgba(0, 242, 255, 0.4); }
+
+        footer { padding: 80px 20px; text-align: center; font-size: 0.9rem; color: #444; border-top: 1px solid rgba(255,255,255,0.05); }
     </style>
 </head>
 <body>
 
     <div class="lang-switch" onclick="toggleLanguage()">
-        <i class="fas fa-globe"></i>
-        <span id="lang-label">TRADUCIR AL TURCO (TR)</span>
+        <i class="fas fa-sync-alt"></i>
+        <span id="lang-label">SWITCH TO TURKISH (TR)</span>
     </div>
 
     <header id="hero">
         <div id="particles-js"></div>
         <div class="hero-content">
             <h1 data-i18n="h-title">NEURALFOCUS AI</h1>
-            <p class="hero-desc" data-i18n="h-desc">Hola, soy <strong>Lucas Guzmán</strong>. Ayudo a emprendedores, pequeños negocios y grandes empresas a usar la tecnología para crecer sin complicaciones.</p>
+            <p class="hero-desc" data-i18n="h-desc">
+                Soy <strong>Lucas Guzmán</strong>. Consultor estratégico dedicado a la implementación de infraestructuras inteligentes. Optimizamos desde negocios locales hasta corporaciones globales mediante lógica aplicada.
+            </p>
             
             <div class="btn-section">
-                <a href="skype:TU_USUARIO_SKYPE?call" class="btn btn-skype"><i class="fas fa-video"></i> <span data-i18n="btn-skype">Invitación a Videollamada</span></a>
-                <a href="https://wa.me/5492246496971" class="btn btn-outline"><i class="fab fa-whatsapp"></i> <span data-i18n="btn-ceo">WhatsApp de contacto directo</span></a>
+                <a href="skype:TU_USUARIO_SKYPE?call" class="btn btn-skype">
+                    <i class="fas fa-video"></i> <span data-i18n="btn-skype">Invitación a Videollamada</span>
+                </a>
+                <a href="https://wa.me/5492246496971" class="btn btn-outline">
+                    <i class="fab fa-whatsapp"></i> <span data-i18n="btn-ceo">WhatsApp de contacto directo</span>
+                </a>
             </div>
         </div>
     </header>
@@ -94,78 +118,87 @@
     </div>
 
     <section class="container">
-        <h2 class="sec-title" data-i18n="pillars-t">¿Cómo puedo ayudarte?</h2>
+        <h2 class="sec-title" data-i18n="pillars-t">Sistemas de Alto Rendimiento</h2>
         <div class="grid-3">
             <div class="card">
-                <i class="fas fa-robot"></i>
-                <h3 data-i18n="p1-h">Inteligencia Artificial</h3>
-                <p data-i18n="p1-p">Te enseño a usar herramientas modernas para que tu negocio trabaje por ti. Ahorra tiempo en tareas aburridas y atiende a tus clientes más rápido, sin importar si tienes un café o una gran fábrica.</p>
+                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800" class="card-img">
+                <div class="card-content">
+                    <i class="fas fa-microchip"></i>
+                    <h3 data-i18n="p1-h">Inteligencia Artificial</h3>
+                    <p data-i18n="p1-p">No solo instalamos software; diseñamos flujos de trabajo autónomos. Implementamos modelos de IA que reducen costos operativos drásticamente, automatizan la atención al cliente y permiten que su negocio funcione 24/7 con precisión quirúrgica.</p>
+                </div>
             </div>
             <div class="card">
-                <i class="fas fa-bullhorn"></i>
-                <h3 data-i18n="p2-h">Marketing Digital</h3>
-                <p data-i18n="p2-p">Hacemos que la gente te encuentre. Si eres un emprendedor local o una gran empresa, aplicamos los métodos necesarios para que tus productos o servicios lleguen a más personas y vendas más.</p>
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" class="card-img">
+                <div class="card-content">
+                    <i class="fas fa-chart-line"></i>
+                    <h3 data-i18n="p2-h">Marketing Digital</h3>
+                    <p data-i18n="p2-p">Estrategias de posicionamiento basadas en datos. Desde una cafetería local que necesita dominar su zona, hasta una gran empresa buscando expansión internacional; aplicamos segmentación avanzada para maximizar su retorno de inversión y visibilidad.</p>
+                </div>
             </div>
             <div class="card">
-                <i class="fas fa-shield-alt"></i>
-                <h3 data-i18n="p3-h">Seguridad Digital</h3>
-                <p data-i18n="p3-p">Protegemos tu información y la de tus clientes. Analizamos qué necesita tu negocio para estar seguro frente a ataques o estafas en internet, manteniendo tu trabajo siempre a salvo.</p>
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800" class="card-img">
+                <div class="card-content">
+                    <i class="fas fa-fingerprint"></i>
+                    <h3 data-i18n="p3-h">Ciberseguridad</h3>
+                    <p data-i18n="p3-p">Arquitectura de protección integral. Analizamos vulnerabilidades en su estructura digital para prevenir brechas de datos y ataques. Aseguramos que el activo más valioso de su empresa, su información, permanezca bajo encriptación y control total.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="contact" class="container">
         <div class="turkey-banner">
-            <h2 data-i18n="tr-h">Beneficios de trabajar conmigo</h2>
-            <p style="margin-bottom: 35px; font-size: 1.1rem; color: #eee; max-width: 750px; margin-inline: auto;" data-i18n="tr-p">Ofrezco una consultoría simple y directa. Mi objetivo es que entiendas cada paso y veas resultados reales en tu negocio, ya sea local o internacional.</p>
-            <a href="mailto:menteglobalempresarial@gmail.com" class="btn btn-primary" style="max-width: 350px; margin: 0 auto;" data-i18n="btn-claim">Solicitar más información</a>
+            <h2 data-i18n="tr-h">Consultoría de Transformación Real</h2>
+            <p style="margin-bottom: 40px; font-size: 1.25rem; color: #ccc; max-width: 800px; margin-inline: auto;" data-i18n="tr-p">Nuestra metodología combina la simplicidad operativa con la potencia tecnológica. Ayudamos a definir el roadmap necesario para que su marca escale de forma segura y rentable.</p>
+            <a href="mailto:menteglobalempresarial@gmail.com" class="btn btn-primary" data-i18n="btn-claim">Solicitar Diagnóstico Estratégico</a>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 <strong>NeuralFocus AI</strong>. Lucas Guzmán.</p>
-        <p style="margin-top: 10px;" data-i18n="foot">Soluciones fáciles para negocios reales.</p>
+        <p>&copy; 2026 <strong>NeuralFocus AI</strong>. Directed by Lucas Guzmán.</p>
+        <p style="margin-top: 15px; letter-spacing: 2px;" data-i18n="foot">ESTRATEGIA | TECNOLOGÍA | SEGURIDAD</p>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        particlesJS("particles-js", { "particles": { "number": { "value": 45 }, "color": { "value": "#bc13fe" }, "line_linked": { "enable": true, "color": "#00f2ff", "opacity": 0.2 }, "move": { "enable": true, "speed": 1.5 } } });
+        particlesJS("particles-js", { "particles": { "number": { "value": 60 }, "color": { "value": "#00f2ff" }, "shape": { "type": "circle" }, "opacity": { "value": 0.5 }, "size": { "value": 2 }, "line_linked": { "enable": true, "distance": 150, "color": "#bc13fe", "opacity": 0.2, "width": 1 }, "move": { "enable": true, "speed": 2 } } });
 
         const translations = {
             es: {
                 "h-title": "NEURALFOCUS AI",
-                "h-desc": "Hola, soy Lucas Guzmán. Ayudo a emprendedores, pequeños negocios y grandes empresas a usar la tecnología para crecer sin complicaciones.",
+                "h-desc": "Soy Lucas Guzmán. Consultor estratégico dedicado a la implementación de infraestructuras inteligentes. Optimizamos desde negocios locales hasta corporaciones globales mediante lógica aplicada.",
                 "btn-skype": "Invitación a Videollamada",
                 "btn-ceo": "WhatsApp de contacto directo",
-                "pillars-t": "¿Cómo puedo ayudarte?",
+                "pillars-t": "Sistemas de Alto Rendimiento",
                 "p1-h": "Inteligencia Artificial",
-                "p1-p": "Te enseño a usar herramientas modernas para que tu negocio trabaje por ti. Ahorra tiempo en tareas aburridas y atiende a tus clientes más rápido, sin importar si tienes un café o una gran fábrica.",
+                "p1-p": "No solo instalamos software; diseñamos flujos de trabajo autónomos. Implementamos modelos de IA que reducen costos operativos drásticamente, automatizan la atención al cliente y permiten que su negocio funcione 24/7 con precisión quirúrgica.",
                 "p2-h": "Marketing Digital",
-                "p2-p": "Hacemos que la gente te encuentre. Si eres un emprendedor local o una gran empresa, aplicamos los métodos necesarios para que tus productos o servicios lleguen a más personas y vendas más.",
-                "p3-h": "Seguridad Digital",
-                "p3-p": "Protegemos tu información y la de tus clientes. Analizamos qué necesita tu negocio para estar seguro frente a ataques o estafas en internet, manteniendo tu trabajo siempre a salvo.",
-                "tr-h": "Beneficios de trabajar conmigo",
-                "tr-p": "Ofrezco una consultoría simple y directa. Mi objetivo es que entiendas cada paso y veas resultados reales en tu negocio, ya sea local o internacional.",
-                "btn-claim": "Solicitar más información",
-                "foot": "Soluciones fáciles para negocios reales.",
-                "label": "TRADUCIR AL TURCO (TR)"
+                "p2-p": "Estrategias de posicionamiento basadas en datos. Desde una cafetería local que necesita dominar su zona, hasta una gran empresa buscando expansión internacional; aplicamos segmentación avanzada para maximizar su retorno de inversión y visibilidad.",
+                "p3-h": "Ciberseguridad",
+                "p3-p": "Arquitectura de protección integral. Analizamos vulnerabilidades en su estructura digital para prevenir brechas de datos y ataques. Aseguramos que el activo más valioso de su empresa, su información, permanezca bajo encriptación y control total.",
+                "tr-h": "Consultoría de Transformación Real",
+                "tr-p": "Nuestra metodología combina la simplicidad operativa con la potencia tecnológica. Ayudamos a definir el roadmap necesario para que su marca escale de forma segura y rentable.",
+                "btn-claim": "Solicitar Diagnóstico Estratégico",
+                "foot": "ESTRATEGIA | TECNOLOGÍA | SEGURIDAD",
+                "label": "SWITCH TO TURKISH (TR)"
             },
             tr: {
                 "h-title": "NEURALFOCUS AI",
-                "h-desc": "Merhaba, ben Lucas Guzmán. Girişimcilere, küçük işletmelere ve büyük şirketlere teknolojiyi kullanarak karmaşıklık olmadan büyümeleri için yardımcı oluyorum.",
+                "h-desc": "Ben Lucas Guzmán. Akıllı altyapıların uygulanmasına adanmış stratejik danışmanım. Uygulamalı mantık yoluyla yerel işletmelerden küresel şirketlere kadar her ölçeği optimize ediyoruz.",
                 "btn-skype": "Görüntülü Görüşme Daveti",
                 "btn-ceo": "Doğrudan İletişim WhatsApp Hattı",
-                "pillars-t": "Size Nasıl Yardımcı Olabilirim?",
+                "pillars-t": "Yüksek Performanslı Sistemler",
                 "p1-h": "Yapay Zeka",
-                "p1-p": "İşletmenizin sizin yerinize çalışması için modern araçları kullanmayı öğretiyorum. İster bir kafe ister büyük bir fabrika olsun, sıkıcı işlerde zaman kazanın ve müşterilerinize daha hızlı hizmet verin.",
+                "p1-p": "Sadece yazılım kurmuyoruz; otonom iş akışları tasarlıyoruz. İşletme maliyetlerini drastik şekilde azaltan, müşteri hizmetlerini otomatikleştiren ve işletmenizin 24/7 cerrahi hassasiyetle çalışmasını sağlayan yapay zeka modelleri uyguluyoruz.",
                 "p2-h": "Dijital Pazarlama",
-                "p2-p": "İnsanların sizi bulmasını sağlıyoruz. İster yerel bir girişimci ister büyük bir şirket olun, satışlarınızı artırmak için gerekli yöntemleri uyguluyoruz.",
-                "p3-h": "Dijital Güvenlik",
-                "p3-p": "Sizin ve müşterilerinizin bilgilerini koruyoruz. İşletmenizin internetteki saldırılara karşı güvende olması için neye ihtiyacı olduğunu analiz ediyor, işinizi koruma altına alıyoruz.",
-                "tr-h": "Benimle Çalışmanın Avantajları",
-                "tr-p": "Basit ve doğrudan danışmanlık sunuyorum. Amacım, her adımı anlamanız ve ister yerel ister uluslararası olsun, işletmenizde gerçek sonuçlar görmenizdir.",
-                "btn-claim": "Daha Fazla Bilgi Al",
-                "foot": "Gerçek işletmeler için kolay çözümler.",
+                "p2-p": "Veri odaklı konumlandırma stratejileri. Bölgesine hakim olmak isteyen yerel bir kafeden, uluslararası genişleme arayan büyük bir şirkete kadar; yatırım getiriniz ve görünürlüğünüzü maksimize etmek için gelişmiş segmentasyon uyguluyoruz.",
+                "p3-h": "Siber Güvenlik",
+                "p3-p": "Bütünsel koruma mimarisi. Veri ihlallerini ve saldırıları önlemek için dijital yapınızdaki güvenlik açıklarını analiz ediyoruz. Şirketinizin en değerli varlığı olan bilgilerinizin tam şifreleme ve kontrol altında kalmasını sağlıyoruz.",
+                "tr-h": "Gerçek Dönüşüm Danışmanlığı",
+                "tr-p": "Metodolojimiz operasyonel basitliği teknolojik güçle birleştirir. Markanızın güvenli ve kârlı bir şekilde ölçeklenmesi için gerekli yol haritasını belirlemenize yardımcı oluyoruz.",
+                "btn-claim": "Stratejik Teşhis Talebi",
+                "foot": "STRATEJİ | TEKNOLOJİ | GÜVENLİK",
                 "label": "İSPANYOLCAYA DÖN (ES)"
             }
         };
