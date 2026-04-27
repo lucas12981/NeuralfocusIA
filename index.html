@@ -50,8 +50,8 @@
         .btn-section { display: flex; flex-direction: column; gap: 15px; width: 100%; max-width: 400px; margin: 0 auto; }
         .btn { width: 100%; padding: 18px 25px; border-radius: 12px; text-decoration: none; font-family: 'Orbitron'; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; display: flex; align-items: center; justify-content: center; gap: 12px; transition: all 0.3s ease; border: none; cursor: pointer; letter-spacing: 1px; }
         
-        .btn-skype { background: rgba(0, 175, 240, 0.05); color: #fff; border: 1px solid var(--skype); backdrop-filter: blur(5px); }
-        .btn-skype:hover { background: var(--skype); color: #000; box-shadow: 0 0 25px rgba(0, 175, 240, 0.5); transform: translateY(-3px); }
+        .btn-meeting { background: rgba(0, 242, 255, 0.1); color: #fff; border: 1px solid var(--cyan); backdrop-filter: blur(5px); }
+        .btn-meeting:hover { background: var(--cyan); color: #000; box-shadow: 0 0 25px rgba(0, 242, 255, 0.5); transform: translateY(-3px); }
         
         .btn-whatsapp { background: transparent; color: #fff; border: 1px solid var(--purple); backdrop-filter: blur(5px); }
         .btn-whatsapp:hover { background: var(--purple); color: #fff; box-shadow: 0 0 25px rgba(188, 19, 254, 0.5); transform: translateY(-3px); }
@@ -106,6 +106,23 @@
 
         footer { background: #000; padding: 50px 20px; text-align: center; color: #555; font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.02); }
         footer strong { color: #888; }
+
+        /* --- MODAL FORMULARIO --- */
+        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.8); backdrop-filter: blur(10px); }
+        .modal-content { background: #111; margin: 10% auto; padding: 40px; border: 1px solid var(--purple); width: 90%; max-width: 500px; border-radius: 20px; box-shadow: 0 0 30px rgba(188, 19, 254, 0.3); position: relative; animation: slideDown 0.4s ease-out; }
+        @keyframes slideDown { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        .close-btn { color: #aaa; position: absolute; top: 20px; right: 25px; font-size: 28px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        .close-btn:hover { color: var(--cyan); }
+        .modal h2 { font-family: 'Orbitron'; color: #fff; margin-bottom: 25px; font-size: 1.5rem; text-align: center; }
+        
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; color: #ccc; margin-bottom: 8px; font-size: 0.85rem; font-family: 'Orbitron'; letter-spacing: 1px; }
+        .form-group input { width: 100%; padding: 15px; border-radius: 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; font-family: 'Inter'; font-size: 1rem; outline: none; transition: 0.3s; }
+        .form-group input:focus { border-color: var(--cyan); background: rgba(0, 242, 255, 0.05); }
+        .form-group input[type="datetime-local"]::-webkit-calendar-picker-indicator { filter: invert(1); cursor: pointer; }
+        
+        .btn-submit { width: 100%; padding: 18px; border-radius: 10px; background: var(--purple); color: #fff; font-family: 'Orbitron'; font-weight: 700; border: none; cursor: pointer; transition: 0.3s; font-size: 1rem; margin-top: 10px; }
+        .btn-submit:hover { background: var(--cyan); color: #000; box-shadow: 0 0 20px rgba(0, 242, 255, 0.4); }
     </style>
 </head>
 <body>
@@ -124,9 +141,9 @@
             </p>
             
             <div class="btn-section">
-                <a href="skype:TU_USUARIO_SKYPE?call" class="btn btn-skype">
-                    <i class="fas fa-video"></i> <span data-i18n="btn-video">Video Call Invitation</span>
-                </a>
+                <button onclick="openModal()" class="btn btn-meeting">
+                    <i class="fas fa-calendar-alt"></i> <span data-i18n="btn-meeting">Request a Meeting</span>
+                </button>
                 <a href="https://wa.me/5492246496971" class="btn btn-whatsapp">
                     <i class="fab fa-whatsapp"></i> <span data-i18n="btn-wp">Direct WhatsApp Contact</span>
                 </a>
@@ -202,17 +219,51 @@
         <p style="margin-top: 10px; text-transform: uppercase; letter-spacing: 1px;" data-i18n="foot-tag">Consulting: Intelligence | Market Scaling | Security</p>
     </footer>
 
+    <div id="meetingModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 data-i18n="mod-title">Schedule Video Call</h2>
+            <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Request Sent!'); closeModal();">
+                <div class="form-group">
+                    <label data-i18n="mod-name">Full Name</label>
+                    <input type="text" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label data-i18n="mod-email">Email Address</label>
+                    <input type="email" required placeholder="contact@company.com">
+                </div>
+                <div class="form-group">
+                    <label data-i18n="mod-comp">Company / Business</label>
+                    <input type="text" required placeholder="Your Company Ltd.">
+                </div>
+                <div class="form-group">
+                    <label data-i18n="mod-date">Select Date & Time</label>
+                    <input type="datetime-local" required>
+                </div>
+                <button type="submit" class="btn-submit" data-i18n="mod-btn">Confirm Meeting</button>
+            </form>
+        </div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
     <script>
         // Configuración premium de partículas
         particlesJS("particles-js", { "particles": { "number": { "value": 70 }, "color": { "value": "#00f2ff" }, "shape": { "type": "circle" }, "opacity": { "value": 0.4 }, "size": { "value": 2 }, "line_linked": { "enable": true, "distance": 150, "color": "#bc13fe", "opacity": 0.2, "width": 1 }, "move": { "enable": true, "speed": 1.5 } } });
+
+        // Lógica del Modal
+        function openModal() { document.getElementById("meetingModal").style.display = "block"; }
+        function closeModal() { document.getElementById("meetingModal").style.display = "none"; }
+        window.onclick = function(event) {
+            let modal = document.getElementById("meetingModal");
+            if (event.target == modal) { modal.style.display = "none"; }
+        }
 
         // Diccionario de Traducciones
         const translations = {
             en: {
                 "hero-title": "NEURALFOCUS AI",
                 "hero-desc": "I am Lucas Guzmán. We provide pure strategic consulting in Artificial Intelligence, Precision Marketing, and Cybersecurity Architecture. From high-growth startups to heavy industrial enterprises, we engineer the digital roadmap for global scaling.",
-                "btn-video": "Video Call Invitation",
+                "btn-meeting": "Request a Meeting",
                 "btn-wp": "Direct WhatsApp Contact",
                 "services-title": "Core Consulting Divisions",
                 
@@ -238,12 +289,19 @@
                 "free-p": "Unlock your growth potential. Claim a 1-on-1, 30-minute high-level diagnostic session. We will evaluate your current AI readiness, marketing architecture, and digital security posture. Zero cost, pure value.",
                 "free-btn": "Claim Free Audit Now",
                 "foot-tag": "Consulting: Intelligence | Market Scaling | Security",
-                "label": "TÜRKÇE (TR)"
+                "label": "TÜRKÇE (TR)",
+
+                "mod-title": "Schedule Video Call",
+                "mod-name": "Full Name",
+                "mod-email": "Email Address",
+                "mod-comp": "Company / Business",
+                "mod-date": "Select Date & Time",
+                "mod-btn": "Confirm Meeting"
             },
             tr: {
                 "hero-title": "NEURALFOCUS AI",
                 "hero-desc": "Ben Lucas Guzmán. Yapay Zeka, Hassas Pazarlama ve Siber Güvenlik Mimarisinde saf stratejik danışmanlık sağlıyoruz. Hızlı büyüyen girişimlerden ağır sanayi kuruluşlarına kadar küresel ölçeklenme için dijital yol haritasını tasarlıyoruz.",
-                "btn-video": "Görüntülü Görüşme Daveti",
+                "btn-meeting": "Toplantı Talep Et",
                 "btn-wp": "Doğrudan İletişim WhatsApp",
                 "services-title": "Temel Danışmanlık Bölümleri",
                 
@@ -269,7 +327,14 @@
                 "free-p": "Büyüme potansiyelinizi ortaya çıkarın. Birebir, 30 dakikalık üst düzey bir teşhis oturumu talep edin. Mevcut yapay zeka hazırlığınızı, pazarlama mimarinizi ve dijital güvenlik duruşunuzu değerlendireceğiz. Sıfır maliyet, saf değer.",
                 "free-btn": "Ücretsiz Denetimi Şimdi Talep Et",
                 "foot-tag": "Danışmanlık: Zeka | Pazar Ölçekleme | Güvenlik",
-                "label": "ENGLISH (EN)"
+                "label": "ENGLISH (EN)",
+
+                "mod-title": "Görüntülü Görüşme Planla",
+                "mod-name": "Ad Soyad",
+                "mod-email": "E-posta Adresi",
+                "mod-comp": "Şirket / İşletme",
+                "mod-date": "Tarih ve Saat Seçin",
+                "mod-btn": "Toplantıyı Onayla"
             }
         };
 
