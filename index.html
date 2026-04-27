@@ -5,23 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <title>NeuralFocus AI | Strategic AI, Marketing & Cybersecurity Consulting</title>
-    <meta name="description" content="Elite strategic consultancy by Lucas Guzmán. We design the roadmap for global scale through AI Audits, Precision Marketing, and Cybersecurity Architecture. Specialized in Turkish market expansion.">
-    <meta name="keywords" content="AI Consulting, Strategic AI Roadmap, Cybersecurity Strategy, Marketing Advisory, Turkey Business Expansion, Lucas Guzman, NeuralFocus AI, Digital Transformation, LatAm Market Entry">
+    <meta name="description" content="Elite strategic consultancy by Lucas Guzmán. Specialized in Turkish market expansion, industrial AI workflows, and cybersecurity.">
     <meta name="author" content="Lucas Guzmán">
     <link rel="canonical" href="https://neuralfocus-ai.vercel.app/" />
-
-    <meta property="og:title" content="NeuralFocus AI | Strategic Consulting">
-    <meta property="og:description" content="Architecting the future of global businesses through autonomous strategy.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1000">
-    <meta property="og:type" content="website">
 
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        :root { --cyan: #00f2ff; --purple: #bc13fe; --dark: #020202; --glass: rgba(255, 255, 255, 0.05); }
+        :root { --cyan: #00f2ff; --purple: #bc13fe; --dark: #020202; --glass: rgba(255, 255, 255, 0.05); --skype: #00aff0; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background: var(--dark); color: #ffffff; font-family: 'Inter', sans-serif; overflow-x: hidden; scroll-behavior: smooth; line-height: 1.6; }
+
+        /* --- FLOATING TRANSLATE BUTTON --- */
+        .lang-switch {
+            position: fixed; bottom: 25px; right: 25px; z-index: 1000;
+            background: rgba(0, 242, 255, 0.1); border: 1px solid var(--cyan);
+            padding: 10px 18px; border-radius: 50px; cursor: pointer;
+            backdrop-filter: blur(10px); display: flex; align-items: center; gap: 8px;
+            font-family: 'Orbitron'; font-size: 0.65rem; color: #fff; transition: 0.3s;
+            box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+        }
+        .lang-switch:hover { transform: scale(1.05); background: rgba(0, 242, 255, 0.2); }
 
         /* --- HERO --- */
         #hero { 
@@ -31,117 +36,171 @@
         #particles-js { position: absolute; width: 100%; height: 100%; z-index: 1; opacity: 0.3; }
 
         .hero-content { position: relative; z-index: 10; text-align: center; width: 100%; max-width: 900px; }
-        h1 { font-family: 'Orbitron', sans-serif; font-size: clamp(2rem, 8vw, 4rem); font-weight: 900; line-height: 1.1; margin-bottom: 15px; text-transform: uppercase; background: linear-gradient(180deg, #fff 40%, #888 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .tagline { font-family: 'Orbitron'; color: var(--cyan); letter-spacing: 3px; font-size: 0.9rem; margin-bottom: 25px; text-transform: uppercase; }
-        .hero-desc { font-size: 1.1rem; color: #ccc; margin-bottom: 35px; max-width: 700px; margin-left: auto; margin-right: auto; }
+        h1 { font-family: 'Orbitron', sans-serif; font-size: clamp(2.2rem, 8vw, 4rem); font-weight: 900; line-height: 1.1; margin-bottom: 15px; text-transform: uppercase; background: linear-gradient(180deg, #fff 40%, #888 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .tagline { font-family: 'Orbitron'; color: var(--cyan); letter-spacing: 3px; font-size: 0.85rem; margin-bottom: 25px; text-transform: uppercase; }
 
         /* --- BUTTONS --- */
-        .btn-section { width: 100%; max-width: 350px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; }
-        .btn { width: 100%; padding: 18px; border-radius: 12px; text-decoration: none; font-family: 'Orbitron'; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; display: flex; align-items: center; justify-content: center; gap: 12px; transition: 0.3s; border: none; cursor: pointer; }
-        .btn-primary { background: var(--cyan); color: #000; box-shadow: 0 0 20px rgba(0, 242, 255, 0.4); }
-        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 0 30px rgba(0, 242, 255, 0.6); }
+        .btn-section { width: 100%; max-width: 350px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+        .btn { width: 100%; padding: 16px; border-radius: 12px; text-decoration: none; font-family: 'Orbitron'; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; display: flex; align-items: center; justify-content: center; gap: 10px; transition: 0.3s; border: none; cursor: pointer; }
+        .btn-primary { background: var(--cyan); color: #000; box-shadow: 0 0 20px rgba(0, 242, 255, 0.3); }
+        .btn-skype { background: transparent; color: #fff; border: 1px solid var(--skype); }
         .btn-outline { background: transparent; color: #fff; border: 1px solid var(--purple); }
         
+        /* --- MEDIA BAR --- */
+        .media-bar { background: rgba(255,255,255,0.02); padding: 25px 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; opacity: 0.4; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .media-bar span { font-family: 'Orbitron'; font-weight: 900; font-size: 0.9rem; letter-spacing: 1px; }
+
         /* --- SECTIONS --- */
-        section { padding: 100px 20px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        section { padding: 80px 20px; border-bottom: 1px solid rgba(255,255,255,0.05); }
         .container { max-width: 1200px; margin: 0 auto; }
-        .sec-title { font-family: 'Orbitron'; color: var(--cyan); text-align: center; margin-bottom: 20px; font-size: 2.2rem; letter-spacing: 2px; text-transform: uppercase; }
-        .sec-subtitle { text-align: center; color: #aaa; margin-bottom: 60px; font-size: 1.1rem; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .sec-title { font-family: 'Orbitron'; color: var(--cyan); text-align: center; margin-bottom: 50px; font-size: 2rem; letter-spacing: 2px; text-transform: uppercase; }
         
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
         .card { background: var(--glass); border-radius: 24px; border: 1px solid rgba(255,255,255,0.05); transition: 0.4s; overflow: hidden; display: flex; flex-direction: column; }
-        .card:hover { border-color: var(--cyan); transform: scale(1.02); background: rgba(255,255,255,0.08); }
-        .card-img { width: 100%; height: 200px; object-fit: cover; filter: grayscale(50%) brightness(0.8); transition: 0.5s; }
-        .card:hover .card-img { filter: grayscale(0%) brightness(1); }
-        .card-content { padding: 35px; }
-        .card i { font-size: 2.5rem; color: var(--purple); margin-bottom: 20px; display: block; }
-        .card h3 { font-family: 'Orbitron'; font-size: 1.3rem; margin-bottom: 15px; color: #fff; }
-        .card p { font-size: 0.95rem; color: #bbb; line-height: 1.7; }
+        .card:hover { border-color: var(--cyan); transform: translateY(-5px); }
+        .card-img { width: 100%; height: 200px; object-fit: cover; filter: grayscale(60%) brightness(0.7); }
+        .card-content { padding: 30px; }
+        .card i { font-size: 2rem; color: var(--purple); margin-bottom: 20px; display: block; }
 
-        /* --- TURKEY SECTION --- */
-        .turkey-banner { background: linear-gradient(135deg, #c8102e 0%, #000 100%); border-radius: 30px; padding: 60px 40px; margin-top: 50px; position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); }
-        .turkey-banner h2 { font-family: 'Orbitron'; font-size: 2rem; margin-bottom: 20px; color: #fff; }
-        .turkey-flag { position: absolute; top: -20px; right: -20px; font-size: 8rem; opacity: 0.1; transform: rotate(15deg); }
+        /* --- TURKEY BANNER --- */
+        .turkey-banner { background: linear-gradient(135deg, #c8102e 0%, #000 100%); border-radius: 30px; padding: 50px 30px; border: 1px solid rgba(255,255,255,0.1); position: relative; }
+        .turkey-flag-bg { position: absolute; top: -10px; right: -10px; font-size: 6rem; opacity: 0.05; transform: rotate(15deg); }
 
-        footer { padding: 60px 20px; text-align: center; font-size: 0.85rem; color: #666; background: #010101; }
-        .badge { display: inline-block; padding: 6px 18px; border-radius: 50px; background: rgba(255,255,255,0.1); margin-top: 20px; color: var(--cyan); font-weight: bold; font-family: 'Orbitron'; font-size: 0.7rem; }
+        footer { padding: 40px 20px; text-align: center; font-size: 0.8rem; color: #555; background: #010101; }
+        .badge { display: inline-block; padding: 6px 15px; border-radius: 50px; background: rgba(255,255,255,0.05); margin-top: 15px; color: var(--cyan); font-weight: bold; font-family: 'Orbitron'; font-size: 0.65rem; }
     </style>
 </head>
 <body>
 
+    <div class="lang-switch" onclick="toggleLanguage()">
+        <i class="fas fa-language"></i>
+        <span id="lang-label">TURKISH / ENGLISH</span>
+    </div>
+
     <header id="hero">
         <div id="particles-js"></div>
         <div class="hero-content">
-            <h1>NEURALFOCUS AI</h1>
-            <p class="tagline">The Architects of Strategic Intelligence</p>
-            <p class="hero-desc">We design the structural logic for global expansion. Pure strategic consulting in AI workflows, predictive marketing, and cybersecurity protocols.</p>
+            <h1 data-i18n="h-title">NEURALFOCUS AI</h1>
+            <p class="tagline" data-i18n="tagline">Architects of Strategic Intelligence</p>
+            <p style="margin-bottom: 30px; color: #ccc; max-width: 700px; margin-inline: auto;" data-i18n="h-desc">Structural logic for global expansion. Pure strategic consulting in AI workflows, industrial marketing, and cybersecurity protocols.</p>
             
             <div class="btn-section">
-                <a href="#turkey-special" class="btn btn-primary"><i class="fas fa-star"></i> Turkey Expansion Grant</a>
-                <a href="https://wa.me/5492246496971?text=Hello%20Lucas,%20I%20want%20to%20consult%20on%20my%20business%20strategy." class="btn btn-outline"><i class="fab fa-whatsapp"></i> Direct Line to CEO</a>
+                <a href="#turkey" class="btn btn-primary" data-i18n="btn-grant">Turkey Expansion Grant</a>
+                <a href="skype:TU_USUARIO_SKYPE?chat" class="btn btn-skype"><i class="fab fa-skype"></i> <span data-i18n="btn-skype">Skype: Real-Time Translation</span></a>
+                <a href="https://wa.me/5492246496971" class="btn btn-outline"><i class="fab fa-whatsapp"></i> <span data-i18n="btn-ceo">Direct Line to CEO</span></a>
             </div>
         </div>
     </header>
 
-    <section id="consulting" class="container">
-        <h2 class="sec-title">Our Strategic Pillars</h2>
-        <p class="sec-subtitle">A holistic diagnostic approach to eliminate operational friction and secure digital assets.</p>
-        
+    <div class="media-bar">
+        <span>HABER7</span><span>CNNTURK</span><span>SABAH</span><span>YENI SAFAK</span><span>24TV</span>
+    </div>
+
+    <section class="container">
+        <h2 class="sec-title" data-i18n="pillars-t">Core Strategic Pillars</h2>
         <div class="grid-3">
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800" alt="Artificial Intelligence Strategy" class="card-img">
+                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800" class="card-img">
                 <div class="card-content">
-                    <i class="fas fa-brain"></i>
-                    <h3>AI Logic & Workflow Design</h3>
-                    <p>We perform 360° audits to identify bottlenecks. We design the blueprints for automated SDR pipelines and customer support ecosystems, ensuring your model is built for scale.</p>
+                    <i class="fas fa-microchip"></i>
+                    <h3 style="font-family: 'Orbitron'; margin-bottom: 10px;" data-i18n="p1-h">AI Workflow Logic</h3>
+                    <p data-i18n="p1-p">We audit industrial processes to design autonomous ecosystems that reduce friction and scale acquisition.</p>
                 </div>
             </div>
-
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" alt="Precision Marketing Advisory" class="card-img">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" class="card-img">
                 <div class="card-content">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Precision Marketing Advisory</h3>
-                    <p>Dominating the Latin American and global markets requires data, not luck. We consult on localization, predictive audience mapping, and AI-driven branding strategies.</p>
+                    <i class="fas fa-industry"></i>
+                    <h3 style="font-family: 'Orbitron'; margin-bottom: 10px;" data-i18n="p2-h">Industrial Expansion</h3>
+                    <p data-i18n="p2-p">Specialized positioning for Turkish machinery and industrial firms in competitive global markets.</p>
                 </div>
             </div>
-
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800" alt="Cybersecurity Architecture" class="card-img">
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800" class="card-img">
                 <div class="card-content">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Cyber-Security Protocol Design</h3>
-                    <p>Safeguarding trade secrets and client data. We architect security frameworks using advanced SSL/TLS protocols and encrypted data flows to ensure a risk-free transformation.</p>
+                    <i class="fas fa-shield-halved"></i>
+                    <h3 style="font-family: 'Orbitron'; margin-bottom: 10px;" data-i18n="p3-h">Security Architecture</h3>
+                    <p data-i18n="p3-p">Design of high-level encryption protocols to protect trade secrets and sensitive business data.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="turkey-special" class="container">
+    <section id="turkey" class="container">
         <div class="turkey-banner">
-            <i class="fas fa-moon turkey-flag"></i>
-            <h2>Türkiye Özel İş Stratejisi (Turkey Business Focus)</h2>
-            <p style="font-size: 1.1rem; color: #eee; margin-bottom: 30px; max-width: 800px;">
-                Specialized consulting for the Turkish industrial and media sectors. We offer a **Free Strategic Expansion Assessment** exclusively for businesses operating within Türkiye.
+            <i class="fas fa-star-and-crescent turkey-flag-bg"></i>
+            <h2 data-i18n="tr-h">Türkiye Özel İş Stratejisi</h2>
+            <p style="margin-bottom: 30px; font-size: 1.1rem; color: #eee;" data-i18n="tr-p">Free Strategic Expansion Assessment for industrial and media companies in Türkiye with real-time translation support.</p>
+            
+            <div style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 25px;">
+                <a href="mailto:menteglobalempresarial@gmail.com" class="btn btn-primary" style="max-width: 350px;" data-i18n="btn-claim">Claim Free Assessment</a>
+            </div>
+            
+            <p style="font-size: 0.7rem; color: #fff; opacity: 0.6; text-transform: uppercase; letter-spacing: 1px;" data-i18n="tr-note">
+                * Admission by application. Subject to strategic availability.
             </p>
-            <ul style="color: #ccc; margin-bottom: 35px; list-style: none; font-size: 0.95rem;">
-                <li><i class="fas fa-check-circle" style="color: var(--cyan); margin-right: 10px;"></i> LatAm Market Entry Diagnostic</li>
-                <li><i class="fas fa-check-circle" style="color: var(--cyan); margin-right: 10px;"></i> Operational Efficiency Audit for Istanbul Enterprises</li>
-                <li><i class="fas fa-check-circle" style="color: var(--cyan); margin-right: 10px;"></i> Cyber-Risk Assessment for Exporters</li>
-            </ul>
-            <a href="mailto:menteglobalempresarial@gmail.com?subject=Turkey%20Strategic%20Request&body=Hello%20Lucas,%20I%20represent%20a%20business%20in%20Turkey%20and%20want%20to%20access%20the%20Free%20Strategic%20Expansion%20Assessment." class="btn btn-primary" style="max-width: 350px;"><i class="fas fa-envelope-open-text"></i> Claim Free Assessment</a>
         </div>
     </section>
 
     <footer>
         <p>&copy; 2026 NeuralFocus AI. Directed by <strong>Lucas Guzmán</strong>.</p>
-        <p>Pure Consulting: AI Architecture | Strategic Marketing | Cybersecurity Design.</p>
-        <div class="badge"><i class="fas fa-map-marker-alt"></i> Hub: Argentina | Global Reach: Türkiye - UAE - Europe</div>
+        <div class="badge">Hub: Argentina | Global Reach: Türkiye - UAE - Europe</div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        particlesJS("particles-js", { "particles": { "number": { "value": 50 }, "color": { "value": "#bc13fe" }, "line_linked": { "enable": true, "color": "#00f2ff", "opacity": 0.25 }, "move": { "enable": true, "speed": 1.5 } } });
+        particlesJS("particles-js", { "particles": { "number": { "value": 40 }, "color": { "value": "#bc13fe" }, "line_linked": { "enable": true, "color": "#00f2ff", "opacity": 0.2 }, "move": { "enable": true, "speed": 1.5 } } });
+
+        const translations = {
+            en: {
+                "h-title": "NEURALFOCUS AI",
+                "tagline": "Architects of Strategic Intelligence",
+                "h-desc": "Structural logic for global expansion. Pure strategic consulting in AI workflows, industrial marketing, and cybersecurity protocols.",
+                "btn-grant": "Turkey Expansion Grant",
+                "btn-skype": "Skype: Real-Time Translation",
+                "btn-ceo": "Direct Line to CEO",
+                "pillars-t": "Core Strategic Pillars",
+                "p1-h": "AI Workflow Logic",
+                "p1-p": "We audit industrial processes to design autonomous ecosystems that reduce friction and scale acquisition.",
+                "p2-h": "Industrial Expansion",
+                "p2-p": "Specialized positioning for Turkish machinery and industrial firms in competitive global markets.",
+                "p3-h": "Security Architecture",
+                "p3-p": "Design of high-level encryption protocols to protect trade secrets and sensitive business data.",
+                "tr-h": "Türkiye Özel İş Stratejisi",
+                "tr-p": "Free Strategic Expansion Assessment for industrial and media companies in Türkiye with real-time translation support.",
+                "btn-claim": "Claim Free Assessment",
+                "tr-note": "* Admission by application. Subject to strategic availability."
+            },
+            tr: {
+                "h-title": "NEURALFOCUS AI",
+                "tagline": "Stratejik Zeka Mimarları",
+                "h-desc": "Küresel büyüme için yapısal mantık. Yapay zeka iş akışları, endüstriyel pazarlama ve siber güvenlik protokollerinde saf stratejik danışmanlık.",
+                "btn-grant": "Türkiye Büyüme Desteği",
+                "btn-skype": "Skype: Gerçek Zamanlı Çeviri",
+                "btn-ceo": "CEO'ya Doğrudan Hat",
+                "pillars-t": "Temel Stratejik Sütunlar",
+                "p1-h": "Yapay Zeka İş Akışı",
+                "p1-p": "Sürtünmeyi azaltan ve kazanımı ölçeklendiren otonom ekosistemler tasarlamak için endüstriyel süreçleri denetliyoruz.",
+                "p2-h": "Endüstriyel Büyüme",
+                "p2-p": "Rekabetçi küresel pazarlardaki Türk makine ve sanayi firmaları için uzmanlaşmış konumlandırma.",
+                "p3-h": "Güvenlik Mimarisi",
+                "p3-p": "Ticari sırları ve hassas iş verilerini korumak için üst düzey şifreleme protokollerinin tasarımı.",
+                "tr-h": "Türkiye Özel İş Stratejisi",
+                "tr-p": "Türkiye'deki sanayi ve medya şirketleri için gerçek zamanlı çeviri desteği ile Ücretsiz Stratejik Büyüme Değerlendirmesi.",
+                "btn-claim": "Ücretsiz Değerlendirme Talebi",
+                "tr-note": "* Başvuru ile kabul edilir. Stratejik uygunluğa tabidir."
+            }
+        };
+
+        let currentLang = 'en';
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'tr' : 'en';
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                el.textContent = translations[currentLang][key];
+            });
+            document.getElementById('lang-label').textContent = currentLang === 'en' ? 'TURKISH / ENGLISH' : 'ENGLISH / TURKISH';
+        }
     </script>
 </body>
 </html>
