@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
 
     <style>
         :root { 
@@ -132,7 +132,7 @@
             </p>
             
             <div class="btn-section">
-                <button onclick="openCalendly(event)" class="btn btn-meeting">
+                <button onclick="Calendly.showPopupWidget('https://calendly.com/menteglobalempresarial/30min'); return false;" class="btn btn-meeting">
                     <i class="fas fa-calendar-alt"></i> <span data-i18n="btn-meeting">Request a Meeting</span>
                 </button>
                 <a href="https://wa.me/5492246496971" target="_blank" class="btn btn-whatsapp">
@@ -200,19 +200,6 @@
     <script>
         particlesJS("particles-js", { "particles": { "number": { "value": 70 }, "color": { "value": "#00f2ff" }, "shape": { "type": "circle" }, "opacity": { "value": 0.4 }, "size": { "value": 2 }, "line_linked": { "enable": true, "distance": 150, "color": "#bc13fe", "opacity": 0.2, "width": 1 }, "move": { "enable": true, "speed": 1.5 } } });
 
-        // BOTÓN CALENDLY FUNCIONAL
-        function openCalendly(e) {
-            e.preventDefault();
-            if (typeof Calendly !== 'undefined') {
-                Calendly.initPopupWidget({
-                    url: 'https://calendly.com/menteglobalempresarial/30min'
-                });
-            } else {
-                window.open('https://calendly.com/menteglobalempresarial/30min', '_blank');
-            }
-            return false;
-        }
-
         const translations = {
             en: {
                 "hero-title": "NEURALFOCUS AI",
@@ -240,7 +227,7 @@
                 "ai-h": "Yapay Zeka Stratejisi",
                 "ai-p": "Operasyonel sürtünmeyi ortadan kaldırmak ve ölçeklenmeyi hızlandırmak için gelişmiş bilişsel çerçeveler tasarlıyoruz. Danışmanlığımız, kritik darboğazları belirlemek için eski iş akışlarınızı derinlemesine analiz eder. Ardından, Makine Öğrenimi modelleri ve LLM'ler için kapsamlı, özel olarak hazırlanmış stratejik dağıtım yol haritaları sunuyoruz. Sonuç, işletme giderlerinde (OPEX) büyük bir düşüş, en aza indirilmiş insan hatası ve ham verilerin eyleme dönüştürülebilir, tahmine dayalı iş zekasına dönüştürülmesidir.",
                 "mkt-h": "Hassas Dijital Pazarlama",
-                "mkt-p": "Acımasız veri analizi ile tasarlanmış pazar penetrasyonu. Yüksek dönüşümlü B2B ve B2C dijital ekosistemler konusunda danışmanlık yaparak geleneksel reklamcılığın ötesine geçiyoruz. İster yerel bir perakende zinciri yönetin, ister küresel olarak ağır makine ihraç edin, tüm edinme huninizi (funnel) tasarlıyor ve denetliyoruz. Tamamen yatırım getirinizi (ROI) en üst düzeye çıkarmaya, müşteri edinme maliyetlerini (CAC) düşürmeye ve son derece rekabetçi ortamlarda baskın bir pazar payı elde etmeye odaklanıyoruz.",
+                "mkt-p": "Acımasız veri analizi ile tasarlanmış pazar penetrasyonu. Yüksek dönüşümlü B2B ve B2C digital ekosistemler konusunda danışmanlık yaparak geleneksel reklamcılığın ötesine geçiyoruz. İster yerel bir perakende zinciri yönetin, ister küresel olarak ağır makine ihraç edin, tüm edinme huninizi (funnel) tasarlıyor ve denetliyoruz. Tamamen yatırım getirinizi (ROI) en üst düzeye çıkarmaya, müşteri edinme maliyetlerini (CAC) düşürmeye ve son derece rekabetçi ortamlarda baskın bir pazar payı elde etmeye odaklanıyoruz.",
                 "cyb-h": "Siber Güvenlik Mimarisi",
                 "cyb-p": "Dijital varlıklarınız ve ticari sırlarınız kurumsal düzeyde güç gerektirir. Kritik altyapı güvenlik açıkları konusunda üst düzey danışmanlık sağlıyor ve titiz risk değerlendirmeleri yapıyoruz. Sıfır Güven (Zero-Trust) mimarilerinin uygulanması ve katı veri uyumluluk protokolleri hakkında tavsiyelerde bulunuyoruz. Stratejik gözetimimiz, kurumsal ağınızın modern tehdit vektörlerine karşı aşılmaz kalmasını sağlayarak iş sürekliliğinizi ve müşteri güveninizi korur.",
                 "free-h": "Ücretsiz Stratejik Denetim",
