@@ -4,11 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <title>NeuralFocus AI | Strategic AI, Marketing & Cybersecurity Consulting</title>
-    <meta name="description" content="Elite strategic consultancy by Lucas Guzmán. Specialized in Turkish market expansion, industrial AI workflows, and cybersecurity.">
-    <meta name="author" content="Lucas Guzmán">
-    <link rel="canonical" href="https://neuralfocus-ai.vercel.app/" />
-
+    <title>NeuralFocus AI | Consultoría Estratégica</title>
+    <meta name="description" content="Ayudo a negocios de todos los tamaños a crecer usando Inteligencia Artificial, Marketing y Seguridad Digital.">
+    
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -17,16 +15,14 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background: var(--dark); color: #ffffff; font-family: 'Inter', sans-serif; overflow-x: hidden; scroll-behavior: smooth; line-height: 1.6; }
 
-        /* --- FLOATING TRANSLATE BUTTON --- */
+        /* --- TRADUCTOR --- */
         .lang-switch {
             position: fixed; bottom: 25px; right: 25px; z-index: 1000;
             background: rgba(0, 242, 255, 0.1); border: 1px solid var(--cyan);
             padding: 10px 18px; border-radius: 50px; cursor: pointer;
             backdrop-filter: blur(10px); display: flex; align-items: center; gap: 8px;
-            font-family: 'Orbitron'; font-size: 0.65rem; color: #fff; transition: 0.3s;
-            box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+            font-family: 'Orbitron'; font-size: 0.65rem; color: #fff; box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
         }
-        .lang-switch:hover { transform: scale(1.05); background: rgba(0, 242, 255, 0.2); }
 
         /* --- HERO --- */
         #hero { 
@@ -36,58 +32,50 @@
         #particles-js { position: absolute; width: 100%; height: 100%; z-index: 1; opacity: 0.3; }
 
         .hero-content { position: relative; z-index: 10; text-align: center; width: 100%; max-width: 900px; }
-        h1 { font-family: 'Orbitron', sans-serif; font-size: clamp(2.2rem, 8vw, 4rem); font-weight: 900; line-height: 1.1; margin-bottom: 15px; text-transform: uppercase; background: linear-gradient(180deg, #fff 40%, #888 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .tagline { font-family: 'Orbitron'; color: var(--cyan); letter-spacing: 3px; font-size: 0.85rem; margin-bottom: 25px; text-transform: uppercase; }
-
-        /* --- BUTTONS --- */
+        h1 { font-family: 'Orbitron', sans-serif; font-size: clamp(2rem, 8vw, 3.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; text-transform: uppercase; background: linear-gradient(180deg, #fff 40%, #888 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        /* --- BOTONES --- */
         .btn-section { width: 100%; max-width: 350px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
         .btn { width: 100%; padding: 16px; border-radius: 12px; text-decoration: none; font-family: 'Orbitron'; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; display: flex; align-items: center; justify-content: center; gap: 10px; transition: 0.3s; border: none; cursor: pointer; }
-        .btn-primary { background: var(--cyan); color: #000; box-shadow: 0 0 20px rgba(0, 242, 255, 0.3); }
+        .btn-primary { background: var(--cyan); color: #000; }
         .btn-skype { background: transparent; color: #fff; border: 1px solid var(--skype); }
         .btn-outline { background: transparent; color: #fff; border: 1px solid var(--purple); }
         
-        /* --- MEDIA BAR --- */
-        .media-bar { background: rgba(255,255,255,0.02); padding: 25px 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; opacity: 0.4; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .media-bar span { font-family: 'Orbitron'; font-weight: 900; font-size: 0.9rem; letter-spacing: 1px; }
+        .media-bar { background: rgba(255,255,255,0.02); padding: 25px 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; opacity: 0.4; }
+        .media-bar span { font-family: 'Orbitron'; font-weight: 900; font-size: 0.9rem; }
 
-        /* --- SECTIONS --- */
+        /* --- SECCIONES --- */
         section { padding: 80px 20px; border-bottom: 1px solid rgba(255,255,255,0.05); }
         .container { max-width: 1200px; margin: 0 auto; }
-        .sec-title { font-family: 'Orbitron'; color: var(--cyan); text-align: center; margin-bottom: 50px; font-size: 2rem; letter-spacing: 2px; text-transform: uppercase; }
+        .sec-title { font-family: 'Orbitron'; color: var(--cyan); text-align: center; margin-bottom: 30px; font-size: 1.8rem; text-transform: uppercase; }
         
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-        .card { background: var(--glass); border-radius: 24px; border: 1px solid rgba(255,255,255,0.05); transition: 0.4s; overflow: hidden; display: flex; flex-direction: column; }
-        .card:hover { border-color: var(--cyan); transform: translateY(-5px); }
-        .card-img { width: 100%; height: 200px; object-fit: cover; filter: grayscale(60%) brightness(0.7); }
-        .card-content { padding: 30px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { background: var(--glass); border-radius: 24px; padding: 30px; border: 1px solid rgba(255,255,255,0.05); }
         .card i { font-size: 2rem; color: var(--purple); margin-bottom: 20px; display: block; }
+        .card h3 { font-family: 'Orbitron'; margin-bottom: 15px; font-size: 1.2rem; }
 
         /* --- TURKEY BANNER --- */
-        .turkey-banner { background: linear-gradient(135deg, #c8102e 0%, #000 100%); border-radius: 30px; padding: 50px 30px; border: 1px solid rgba(255,255,255,0.1); position: relative; }
-        .turkey-flag-bg { position: absolute; top: -10px; right: -10px; font-size: 6rem; opacity: 0.05; transform: rotate(15deg); }
+        .turkey-banner { background: linear-gradient(135deg, #c8102e 0%, #000 100%); border-radius: 30px; padding: 50px 30px; border: 1px solid rgba(255,255,255,0.1); text-align: center; }
 
-        footer { padding: 40px 20px; text-align: center; font-size: 0.8rem; color: #555; background: #010101; }
-        .badge { display: inline-block; padding: 6px 15px; border-radius: 50px; background: rgba(255,255,255,0.05); margin-top: 15px; color: var(--cyan); font-weight: bold; font-family: 'Orbitron'; font-size: 0.65rem; }
+        footer { padding: 40px 20px; text-align: center; font-size: 0.8rem; color: #555; }
     </style>
 </head>
 <body>
 
     <div class="lang-switch" onclick="toggleLanguage()">
         <i class="fas fa-language"></i>
-        <span id="lang-label">TURKISH / ENGLISH</span>
+        <span id="lang-label">CAMBIAR A TURCO (TR)</span>
     </div>
 
     <header id="hero">
         <div id="particles-js"></div>
         <div class="hero-content">
             <h1 data-i18n="h-title">NEURALFOCUS AI</h1>
-            <p class="tagline" data-i18n="tagline">Architects of Strategic Intelligence</p>
-            <p style="margin-bottom: 30px; color: #ccc; max-width: 700px; margin-inline: auto;" data-i18n="h-desc">Structural logic for global expansion. Pure strategic consulting in AI workflows, industrial marketing, and cybersecurity protocols.</p>
+            <p style="margin-bottom: 30px; color: #ccc; font-size: 1.1rem;" data-i18n="h-desc">Hola, soy Lucas Guzmán. Ayudo a emprendedores, pequeños negocios y grandes empresas a usar la tecnología para crecer sin complicaciones.</p>
             
             <div class="btn-section">
-                <a href="#turkey" class="btn btn-primary" data-i18n="btn-grant">Turkey Expansion Grant</a>
-                <a href="skype:TU_USUARIO_SKYPE?chat" class="btn btn-skype"><i class="fab fa-skype"></i> <span data-i18n="btn-skype">Skype: Real-Time Translation</span></a>
-                <a href="https://wa.me/5492246496971" class="btn btn-outline"><i class="fab fa-whatsapp"></i> <span data-i18n="btn-ceo">Direct Line to CEO</span></a>
+                <a href="skype:TU_USUARIO_SKYPE?call" class="btn btn-skype"><i class="fas fa-video"></i> <span data-i18n="btn-skype">Invitación a Videollamada</span></a>
+                <a href="https://wa.me/5492246496971" class="btn btn-outline"><i class="fab fa-whatsapp"></i> <span data-i18n="btn-ceo">WhatsApp de contacto directo</span></a>
             </div>
         </div>
     </header>
@@ -97,54 +85,37 @@
     </div>
 
     <section class="container">
-        <h2 class="sec-title" data-i18n="pillars-t">Core Strategic Pillars</h2>
+        <h2 class="sec-title" data-i18n="pillars-t">¿Cómo puedo ayudarte?</h2>
         <div class="grid-3">
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800" class="card-img">
-                <div class="card-content">
-                    <i class="fas fa-microchip"></i>
-                    <h3 style="font-family: 'Orbitron'; margin-bottom: 10px;" data-i18n="p1-h">AI Workflow Logic</h3>
-                    <p data-i18n="p1-p">We audit industrial processes to design autonomous ecosystems that reduce friction and scale acquisition.</p>
-                </div>
+                <i class="fas fa-robot"></i>
+                <h3 data-i18n="p1-h">Inteligencia Artificial</h3>
+                <p data-i18n="p1-p">Te enseño a usar herramientas modernas para que tu negocio trabaje por ti. Ahorra tiempo en tareas aburridas y atiende a tus clientes más rápido, sin importar si tienes un café o una fábrica.</p>
             </div>
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" class="card-img">
-                <div class="card-content">
-                    <i class="fas fa-industry"></i>
-                    <h3 style="font-family: 'Orbitron'; margin-bottom: 10px;" data-i18n="p2-h">Industrial Expansion</h3>
-                    <p data-i18n="p2-p">Specialized positioning for Turkish machinery and industrial firms in competitive global markets.</p>
-                </div>
+                <i class="fas fa-store"></i>
+                <h3 data-i18n="p2-h">Marketing Digital</h3>
+                <p data-i18n="p2-p">Hacemos que la gente te encuentre. Si eres un emprendedor local o una gran empresa, aplicamos los métodos necesarios para que tus productos o servicios lleguen a más personas y vendas más.</p>
             </div>
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800" class="card-img">
-                <div class="card-content">
-                    <i class="fas fa-shield-halved"></i>
-                    <h3 style="font-family: 'Orbitron'; margin-bottom: 10px;" data-i18n="p3-h">Security Architecture</h3>
-                    <p data-i18n="p3-p">Design of high-level encryption protocols to protect trade secrets and sensitive business data.</p>
-                </div>
+                <i class="fas fa-user-shield"></i>
+                <h3 data-i18n="p3-h">Seguridad Digital</h3>
+                <p data-i18n="p3-p">Protegemos tu información y la de tus clientes. Analizamos qué necesita tu negocio para estar seguro frente a ataques o estafas en internet, manteniendo tu trabajo siempre a salvo.</p>
             </div>
         </div>
     </section>
 
     <section id="turkey" class="container">
         <div class="turkey-banner">
-            <i class="fas fa-star-and-crescent turkey-flag-bg"></i>
-            <h2 data-i18n="tr-h">Türkiye Özel İş Stratejisi</h2>
-            <p style="margin-bottom: 30px; font-size: 1.1rem; color: #eee;" data-i18n="tr-p">Free Strategic Expansion Assessment for industrial and media companies in Türkiye with real-time translation support.</p>
-            
-            <div style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 25px;">
-                <a href="mailto:menteglobalempresarial@gmail.com" class="btn btn-primary" style="max-width: 350px;" data-i18n="btn-claim">Claim Free Assessment</a>
-            </div>
-            
-            <p style="font-size: 0.7rem; color: #fff; opacity: 0.6; text-transform: uppercase; letter-spacing: 1px;" data-i18n="tr-note">
-                * Admission by application. Subject to strategic availability.
-            </p>
+            <h2 data-i18n="tr-h">Beneficios de trabajar conmigo</h2>
+            <p style="margin-bottom: 30px; font-size: 1.1rem; color: #eee;" data-i18n="tr-p">Ofrezco una consultoría simple y directa. Mi objetivo es que entiendas cada paso y veas resultados reales en tu negocio, ya sea local o internacional.</p>
+            <a href="mailto:menteglobalempresarial@gmail.com" class="btn btn-primary" style="max-width: 350px; margin: 0 auto;" data-i18n="btn-claim">Solicitar más información</a>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 NeuralFocus AI. Directed by <strong>Lucas Guzmán</strong>.</p>
-        <div class="badge">Hub: Argentina | Global Reach: Türkiye - UAE - Europe</div>
+        <p>&copy; 2026 NeuralFocus AI. Lucas Guzmán.</p>
+        <p data-i18n="foot">Soluciones fáciles para negocios reales.</p>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
@@ -154,41 +125,37 @@
         const translations = {
             en: {
                 "h-title": "NEURALFOCUS AI",
-                "tagline": "Architects of Strategic Intelligence",
-                "h-desc": "Structural logic for global expansion. Pure strategic consulting in AI workflows, industrial marketing, and cybersecurity protocols.",
-                "btn-grant": "Turkey Expansion Grant",
-                "btn-skype": "Skype: Real-Time Translation",
-                "btn-ceo": "Direct Line to CEO",
-                "pillars-t": "Core Strategic Pillars",
-                "p1-h": "AI Workflow Logic",
-                "p1-p": "We audit industrial processes to design autonomous ecosystems that reduce friction and scale acquisition.",
-                "p2-h": "Industrial Expansion",
-                "p2-p": "Specialized positioning for Turkish machinery and industrial firms in competitive global markets.",
-                "p3-h": "Security Architecture",
-                "p3-p": "Design of high-level encryption protocols to protect trade secrets and sensitive business data.",
-                "tr-h": "Türkiye Özel İş Stratejisi",
-                "tr-p": "Free Strategic Expansion Assessment for industrial and media companies in Türkiye with real-time translation support.",
-                "btn-claim": "Claim Free Assessment",
-                "tr-note": "* Admission by application. Subject to strategic availability."
+                "h-desc": "Hola, soy Lucas Guzmán. Ayudo a emprendedores, pequeños negocios y grandes empresas a usar la tecnología para crecer sin complicaciones.",
+                "btn-skype": "Invitación a Videollamada",
+                "btn-ceo": "WhatsApp de contacto directo",
+                "pillars-t": "¿Cómo puedo ayudarte?",
+                "p1-h": "Inteligencia Artificial",
+                "p1-p": "Te enseño a usar herramientas modernas para que tu negocio trabaje por ti. Ahorra tiempo en tareas aburridas y atiende a tus clientes más rápido, sin importar si tienes un café o una fábrica.",
+                "p2-h": "Marketing Digital",
+                "p2-p": "Hacemos que la gente te encuentre. Si eres un emprendedor local o una gran empresa, aplicamos los métodos necesarios para que tus productos o servicios lleguen a más personas y vendas más.",
+                "p3-h": "Seguridad Digital",
+                "p3-p": "Protegemos tu información y la de tus clientes. Analizamos qué necesita tu negocio para estar seguro frente a ataques o estafas en internet, manteniendo tu trabajo siempre a salvo.",
+                "tr-h": "Beneficios de trabajar conmigo",
+                "tr-p": "Ofrezco una consultoría simple y directa. Mi objetivo es que entiendas cada paso y veas resultados reales en tu negocio, ya sea local o internacional.",
+                "btn-claim": "Solicitar más información",
+                "foot": "Soluciones fáciles para negocios reales."
             },
             tr: {
                 "h-title": "NEURALFOCUS AI",
-                "tagline": "Stratejik Zeka Mimarları",
-                "h-desc": "Küresel büyüme için yapısal mantık. Yapay zeka iş akışları, endüstriyel pazarlama ve siber güvenlik protokollerinde saf stratejik danışmanlık.",
-                "btn-grant": "Türkiye Büyüme Desteği",
-                "btn-skype": "Skype: Gerçek Zamanlı Çeviri",
-                "btn-ceo": "CEO'ya Doğrudan Hat",
-                "pillars-t": "Temel Stratejik Sütunlar",
-                "p1-h": "Yapay Zeka İş Akışı",
-                "p1-p": "Sürtünmeyi azaltan ve kazanımı ölçeklendiren otonom ekosistemler tasarlamak için endüstriyel süreçleri denetliyoruz.",
-                "p2-h": "Endüstriyel Büyüme",
-                "p2-p": "Rekabetçi küresel pazarlardaki Türk makine ve sanayi firmaları için uzmanlaşmış konumlandırma.",
-                "p3-h": "Güvenlik Mimarisi",
-                "p3-p": "Ticari sırları ve hassas iş verilerini korumak için üst düzey şifreleme protokollerinin tasarımı.",
-                "tr-h": "Türkiye Özel İş Stratejisi",
-                "tr-p": "Türkiye'deki sanayi ve medya şirketleri için gerçek zamanlı çeviri desteği ile Ücretsiz Stratejik Büyüme Değerlendirmesi.",
-                "btn-claim": "Ücretsiz Değerlendirme Talebi",
-                "tr-note": "* Başvuru ile kabul edilir. Stratejik uygunluğa tabidir."
+                "h-desc": "Merhaba, ben Lucas Guzmán. Girişimcilere, küçük işletmelere ve büyük şirketlere teknolojiyi kullanarak karmaşıklık olmadan büyümeleri için yardımcı oluyorum.",
+                "btn-skype": "Görüntülü Görüşme Daveti",
+                "btn-ceo": "Doğrudan İletişim WhatsApp'ı",
+                "pillars-t": "Size Nasıl Yardımcı Olabilirim?",
+                "p1-h": "Yapay Zeka",
+                "p1-p": "İşletmenizin sizin yerinize çalışması için modern araçları kullanmayı öğretiyorum. İster bir kafe ister bir fabrika sahibi olun, sıkıcı görevlerde zaman kazanın ve müşterilerinize daha hızlı hizmet verin.",
+                "p2-h": "Dijital Pazarlama",
+                "p2-p": "İnsanların sizi bulmasını sağlıyoruz. İster yerel bir girişimci ister büyük bir şirket olun, ürün veya hizmetlerinizin daha fazla kişiye ulaşması ve daha fazla satış yapmanız için gerekli yöntemleri uyguluyoruz.",
+                "p3-h": "Dijital Güvenlik",
+                "p3-p": "Sizin ve müşterilerinizin bilgilerini koruyoruz. İşletmenizin internetteki saldırılara veya dolandırıcılıklara karşı güvende olması için neye ihtiyacı olduğunu analiz ediyor, işinizi her zaman güvende tutuyoruz.",
+                "tr-h": "Benimle Çalışmanın Faydaları",
+                "tr-p": "Basit ve doğrudan danışmanlık sunuyorum. Amacım, her adımı anlamanız ve ister yerel ister uluslararası olsun, işletmenizde gerçek sonuçlar görmenizdir.",
+                "btn-claim": "Daha Fazla Bilgi İste",
+                "foot": "Gerçek işletmeler için kolay çözümler."
             }
         };
 
@@ -199,7 +166,7 @@
                 const key = el.getAttribute('data-i18n');
                 el.textContent = translations[currentLang][key];
             });
-            document.getElementById('lang-label').textContent = currentLang === 'en' ? 'TURKISH / ENGLISH' : 'ENGLISH / TURKISH';
+            document.getElementById('lang-label').textContent = currentLang === 'en' ? 'CAMBIAR A TURCO (TR)' : 'İSPANYOLCAYA DEĞİŞTİR (ES)';
         }
     </script>
 </body>
