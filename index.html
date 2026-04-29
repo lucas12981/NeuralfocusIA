@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
+    <meta name="google-site-verification" content="google6140d558981a67bc" />
+    
     <title>NeuralFocus AI | Elite Strategic Consultancy</title>
     <meta name="description" content="Pure strategic consulting in Artificial Intelligence, Digital Marketing, and Cybersecurity Architecture. Directed by Lucas Guzmán.">
     
@@ -114,10 +116,13 @@
             </p>
             
             <div class="btn-section">
-                <button onclick="openCalendly()" class="btn btn-meeting">
+                <a href="https://calendly.com/menteglobalempresarial/30min" 
+                   onclick="if(typeof Calendly !== 'undefined') { Calendly.initPopupWidget({url: 'https://calendly.com/menteglobalempresarial/30min'}); return false; }" 
+                   class="btn btn-meeting">
                     <i class="fas fa-calendar-alt"></i> <span data-i18n="btn-meeting">Request a Meeting</span>
-                </button>
-                <a href="https://wa.me/5492246496971" class="btn btn-whatsapp">
+                </a>
+                
+                <a href="https://wa.me/5492246496971" target="_blank" class="btn btn-whatsapp">
                     <i class="fab fa-whatsapp"></i> <span data-i18n="btn-wp">Direct WhatsApp Contact</span>
                 </a>
             </div>
@@ -190,18 +195,6 @@
     <script>
         // Partículas
         particlesJS("particles-js", { "particles": { "number": { "value": 70 }, "color": { "value": "#00f2ff" }, "shape": { "type": "circle" }, "opacity": { "value": 0.4 }, "size": { "value": 2 }, "line_linked": { "enable": true, "distance": 150, "color": "#bc13fe", "opacity": 0.2, "width": 1 }, "move": { "enable": true, "speed": 1.5 } } });
-
-        // INTEGRACIÓN DE CALENDLY
-        function openCalendly() {
-            Calendly.initPopupWidget({
-                url: 'https://calendly.com/menteglobalempresarial/30min',
-                branding: {
-                    primaryColor: '00f2ff',
-                    textColor: '050505'
-                }
-            });
-            return false;
-        }
 
         // Traducciones
         const translations = {
